@@ -1,0 +1,152 @@
+﻿/* Global Styles */
+body {
+    background-color: #f8f9fa; /* Light background */
+    color: #343a40; /* Dark text color */
+    font-family: 'Arial', sans-serif; /* Font family */
+}
+
+h2 {
+    font-weight: 700;
+    color: #343a40; /* Dark color for headings */
+}
+
+p.lead {
+    font-size: 1.25rem;
+    font-weight: 500;
+    color: #6c757d; /* Lighter text for leads */
+}
+
+/* Card Styles */
+.card {
+    background-color: #ffffff; /* Card background */
+    border: 1px solid #dee2e6; /* Card border */
+    border-radius: 8px; /* Rounded corners */
+    color: #343a40; /* Card text color */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Light shadow effect */
+    margin-bottom: 20px; /* Space between cards */
+    transition: box-shadow 0.3s; /* Smooth shadow effect */
+}
+
+    .card:hover {
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Shadow on hover */
+    }
+
+.card-body {
+    padding: 20px; /* Inner padding */
+}
+
+.card-title {
+    font-size: 1.2rem; /* Title size */
+    font-weight: 600; /* Bold title */
+    color: #007bff; /* Blue color for titles */
+}
+
+.card-text {
+    font-size: 1.5rem; /* Larger text for numbers */
+    font-weight: 700; /* Bold text */
+}
+
+/* Button Styles */
+.btn {
+    font-size: 0.9rem; /* Button font size */
+    padding: 10px 15px; /* Button padding */
+    border-radius: 5px; /* Rounded corners */
+    margin-top: 10px; /* Space above buttons */
+}
+
+.btn-primary {
+    background-color: #007bff; /* Primary color */
+    border-color: #007bff; /* Primary border */
+    color: #fff; /* White text */
+}
+
+    .btn-primary:hover {
+        background-color: #0056b3; /* Darker blue on hover */
+    }
+
+.btn-success {
+    background-color: #28a745; /* Success color */
+    border-color: #28a745; /* Success border */
+}
+
+.btn-danger {
+    background-color: #dc3545; /* Danger color */
+    border-color: #dc3545; /* Danger border */
+}
+
+.btn-sm {
+    padding: 5px 10px; /* Smaller padding */
+    font-size: 0.8rem; /* Smaller font size */
+}
+
+/* Table Styles */
+table {
+    margin-top: 20px; /* Space above table */
+    background-color: #ffffff; /* Table background */
+    border-collapse: collapse; /* No gaps between cells */
+    width: 100%; /* Full width */
+    border-radius: 8px; /* Rounded corners */
+    overflow: hidden; /* Prevent overflow */
+}
+
+.table thead th {
+    background-color: #007bff; /* Header color */
+    color: #ffffff; /* White text */
+}
+
+.table-hover tbody tr:hover {
+    background-color: #f1f1f1; /* Hover effect for rows */
+}
+
+.table th, .table td {
+    padding: 12px 15px; /* Cell padding */
+    text-align: left; /* Left alignment */
+    font-size: 0.9rem; /* Font size */
+    color: #343a40; /* Cell text color */
+}
+
+.table-striped tbody tr:nth-of-type(odd) {
+    background-color: #f8f9fa; /* Striped rows */
+}
+
+/* Pagination Styles */
+/* Pagination Styles */
+.pagination {
+    margin-top: 20px;
+}
+
+    .pagination li {
+        display: inline-block;
+        margin-right: 10px;
+    }
+
+        .pagination li a {
+            color: #337ab7;
+            text-decoration: none;
+        }
+
+            .pagination li a:hover {
+                color: #23527c;
+            }
+
+/* Pagination Styles */
+/* Pagination Styles */
+
+/* Card Styles */
+.card {
+    margin-bottom: 20px; /* Space between cards */
+}
+
+/* Responsive adjustments for cards */
+@media (max-width: 767.98px) {
+    .card {
+        margin-bottom: 10px; /* Less space on smaller screens */
+    }
+}
+/* Adjust for Responsiveness */
+@media (max-width: 768px) {
+    table {
+        display: block; /* Allow horizontal scroll */
+        overflow-x: auto; /* Scroll overflow */
+    }
+}

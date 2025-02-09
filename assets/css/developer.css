@@ -1,0 +1,179 @@
+.chief-guest-sec .guest-card {
+    max-width: 50%
+}
+
+.speakers-sec .speaker-card-container .sperker-wrapper .speaker-card:first-child {
+    margin-bottom: 0
+}
+
+.speakers-sec .speaker-card-container .sperker-wrapper .card-title .name {
+    width: 60%
+}
+
+.slick-slide .card-title img, .speaker-card-container .slick-slide {
+    width: auto
+}
+
+.no-dropdown .custom-select {
+    cursor: not-allowed !important
+}
+
+.problem-stmt-text .text-link {
+    color: #007BC9;
+    text-decoration: underline;
+}
+
+@media only screen and (max-width:767px) {
+    .speakers .home-banner .banner_wrapper .banner-title .ai-img {
+        top: 1px
+    }
+
+    .about-rise-sec .about-raise-card .content .heading-txt h2 img {
+        position: relative;
+        top: 1px
+    }
+
+    .chief-guest-sec .guest-card {
+        max-width: 100%
+    }
+
+    .speakers-sec .speaker-card-container .sperker-wrapper .speaker-card {
+        position: relative;
+        min-height: 270px
+    }
+
+        .speakers-sec .speaker-card-container .sperker-wrapper .speaker-card .card-img {
+            position: absolute;
+            bottom: 0
+        }
+
+    .rise-circle-sec .rise-circle-wrapper {
+        padding: 2.25rem 0 1.5rem
+    }
+
+    .about-rise-sec .about-raise-card .content .sub-text {
+        font-size: 14px
+    }
+
+    #registration-success-popup .popup-img img {
+        width: 100px
+    }
+}
+
+.speakers-sec .speaker-card-container .sperker-wrapper .speaker-card .card-img {
+    position: absolute;
+    bottom: 0;
+    left: 0
+}
+
+.speakers-sec .speaker-card-container .sperker-wrapper .speaker-card {
+    width: 281px;
+    height: 290px;
+    position: relative
+}
+
+.slick-slide .speaker-logo-img img {
+    width: 100%
+}
+
+.slick-slide .speaker-logo-img {
+    max-width: 30%;
+    position: absolute;
+    right: 12px;
+    top: 15px
+}
+
+    .slick-slide .speaker-logo-img img {
+        max-width: 100%;
+        max-height: 50px;
+        height: auto
+    }
+
+.speakers .home-banner .banner_wrapper .banner-title .ai-img {
+    margin-right: 0;
+    position: relative;
+    top: 2px
+}
+
+.home .home-banner-slider .slick-dots {
+    left: auto;
+    right: 30px;
+    bottom: 15px
+}
+
+.open-popup {
+    cursor: pointer
+}
+
+
+.register-form .form-sec .rigester-form-sec {
+    justify-content: inherit;
+}
+
+.register-form .form-sec .form-card {
+    flex-basis: 0;
+}
+
+.form-sec .rigester-form-sec .terms {
+    margin-top: auto;
+}
+
+
+.form-sec .rigester-form-sec .btn-card .disabled {
+    color: #fff;
+}
+
+
+
+span.sub-titleData {
+    font-weight: 700;
+}
+
+
+.mt-16 {
+    margin-top: 16px;
+}
+
+/* pearl responsive */
+
+
+@media only screen and (max-width: 575px) {
+    .user-name {
+        display: none;
+    }
+
+    .headerbuttongroup .login-btn {
+        padding: .4688rem 0rem;
+    }
+
+    .headerbuttongroup .login-btn {
+        font-size: 0.8rem;
+        width: 5.1rem;
+        text-transform: capitalize;
+    }
+
+    .home-banner.pearl-banner .banner_text.postlogin-banner {
+        max-width: 100%
+    }
+
+    .home-banner.pearl-banner .banner-title.postlogin-banner-tl {
+        max-width: 100%
+    }
+}
+
+.form-sec .rigester-form-sec .terms .clr-txt {
+    font-size: .875rem;
+}
+
+.submit-sec .drag-drop-sec .need-help-section .submit-btn {
+    background: #022066;
+}
+
+.gallery .image-card {
+    width: 31.6%;
+}
+
+    .gallery .image-card .img-wraper img {
+        object-fit: cover;
+        width: 100%;
+    }

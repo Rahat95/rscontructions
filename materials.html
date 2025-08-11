@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Materials - RS Constructions</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            background-color: #f9f9f9;
+        }
+        .materials-header {
+            background: #1a1a1a;
+            color: white;
+            padding: 30px 20px;
+            text-align: center;
+        }
+        .materials-header h1 {
+            margin: 0;
+            font-size: 2.2rem;
+        }
+        .materials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            padding: 40px;
+        }
+        .material-card {
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            transition: 0.3s;
+        }
+        .material-card:hover {
+            transform: translateY(-5px);
+        }
+        .material-card img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+        }
+        .material-card h3 {
+            margin: 15px;
+            font-size: 1.2rem;
+            color: #333;
+        }
+        .material-card p {
+            margin: 0 15px 15px;
+            color: #555;
+        }
+        .cta-banner {
+        background: linear-gradient(135deg, #ff9800, #ff5722);
+        color: white;
+        text-align: center;
+        padding: 25px 15px;
+        border-radius: 10px;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        font-family: Arial, sans-serif;
+        margin: 20px 0;
+        animation: popUp 0.8s ease-in-out;
+    }
+    .cta-banner h3 {
+        margin-bottom: 10px;
+        font-size: 24px;
+    }
+    .cta-banner p {
+        font-size: 16px;
+        margin-bottom: 15px;
+    }
+    .cta-btn {
+        display: inline-block;
+        background: white;
+        color: #ff5722;
+        padding: 10px 18px;
+        margin: 5px;
+        border-radius: 6px;
+        font-weight: bold;
+        text-decoration: none;
+        transition: all 0.3s ease;
+    }
+    .cta-btn:hover {
+        background: rgba(255,255,255,0.8);
+        transform: scale(1.05);
+    }
+    .cta-btn.secondary {
+        background: #fff3e0;
+        color: #ff9800;
+    }
+    @keyframes popUp {
+        0% { transform: scale(0.9); opacity: 0; }
+        100% { transform: scale(1); opacity: 1; }
+    }
+    </style>
+</head>
+<body>
+
+    <header class="materials-header">
+        <h1>Our Construction Materials</h1>
+        <p>High-quality materials for your dream project</p>
+    </header>
+
+    <section class="materials-grid">
+    <div class="material-card">
+        <img src="assets/images/construction-cement.jpg" alt="Cement">
+        <h3>Premium Cement</h3>
+        <p>High-strength, durable cement ideal for all structural applications including foundations, beams, and slabs.</p>
+    </div>
+
+    <div class="material-card">
+        <img src="assets/images/rubble-stone.png" alt="Rubble Stone">
+        <h3>Rubble Stone</h3>
+        <p>Natural, eco-friendly rubble stones perfect for strong, long-lasting walls and landscaping projects.</p>
+    </div>
+
+    <div class="material-card">
+        <img src="assets/images/river-sand.webp" alt="Black River Sand">
+        <h3>Black River Sand</h3>
+        <p>Finely graded black sand suitable for plastering, concrete mix, and masonry work with excellent binding properties.</p>
+    </div>
+
+    <div class="material-card">
+        <img src="assets/images/brown-river-sand-for-construction.png" alt="Brown River Sand">
+        <h3>Brown River Sand</h3>
+        <p>Natural brown sand ideal for construction and plastering, offering good compaction and workability.</p>
+    </div>
+
+    <div class="material-card">
+        <img src="assets/images/river-sand.webp" alt="Washed Sand">
+        <h3>Washed Sand</h3>
+        <p>Clean, washed sand free from impurities, ideal for high-quality plastering and concrete applications.</p>
+    </div>
+
+    <div class="material-card">
+        <img src="assets/images/concrete-sand.jpg" alt="Washed Concrete Sand">
+        <h3>Washed Concrete Sand</h3>
+        <p>Mechanically washed fine aggregates, perfect substitute for river sand in concrete mixes for enhanced durability.</p>
+        <p><strong>GST:</strong> 5%</p>
+    </div>
+
+   <div class="material-card">
+    <img src="assets/images/broken-bricks-soil-filling.png" alt="Debris and Soil Filling">
+    <h3>Debris / Soil Filling</h3>
+    <p>High-quality debris and soil mix used for land leveling, backfilling, and site preparation to ensure stable foundations.</p>
+    <p><strong>GST:</strong> 5%</p>
+</div>
+
+    <div class="material-card">
+        <img src="assets/images/crush-sand.webp" alt="Crush Sand">
+        <h3>VSI Crush Sand</h3>
+        <p>Manufactured crushed sand used as a sustainable alternative to natural sand in concrete and plastering.</p>
+        <p><strong>GST:</strong> 5%</p>
+    </div>
+
+    <div class="material-card">
+        <img src="assets/images/aggregate.webp" alt="VSI Aggregate 10mm">
+        <h3>VSI Aggregate 10mm-60mm</h3>
+        <p>Coarse crushed stones sized 10mm-60mm, Railway ballast.</p>
+        <p><strong>GST:</strong> 5%</p>
+    </div>
+
+    <div class="material-card">
+        <img src="assets/images/bricks.webp" alt="Bricks 4 inch">
+        <h3>Bricks 4"</h3>
+        <p>Standard 4-inch clay bricks known for their strength and reliability in wall construction.</p>
+        <p><strong>GST:</strong> 12%</p>
+    </div>
+
+    <div class="material-card">
+        <img src="assets/images/brick.webp" alt="Bricks 6 inch">
+        <h3>Bricks 6"</h3>
+        <p>Heavy-duty 6-inch clay bricks designed for durable and load-bearing walls.</p>
+        <p><strong>GST:</strong> 12%</p>
+    </div>
+
+    <div class="material-card">
+        <img src="assets/images/aac-blocks.png" alt="AAC Blocks">
+        <h3>AAC Blocks / Fly Ash Bricks / Blocks</h3>
+        <p>Lightweight, energy-efficient AAC blocks and fly ash bricks for modern, eco-friendly construction.</p>
+    </div>
+    <div class="material-card">
+    <img src="assets/images/need-more-materials.png" alt="More Materials">
+    <h3>Need More Materials?</h3>
+    <p>Looking for materials not listed here? We can source and supply any construction material you need — just ask us!</p>
+</div>
+
+</section>
+
+    <div class="cta-banner">
+    <h3>🏗️ Need Building Materials Today?</h3>
+    <p>Order now and get fast delivery at the best prices. Quality materials for your dream projects!</p>
+    <a href="tel:+919820953268" class="cta-btn">📞 Call Us Now on +919820953268</a>
+    <a href="mailto:rsenterprises95m@gmail.com" class="cta-btn secondary">✉️ Email Your Order : rsenterprises95m@gmail.com</a>
+</div>
+</body>
+</html>

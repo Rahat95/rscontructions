@@ -1,341 +1,473 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Materials - RS Constructions</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      background-color: #f9f9f9;
-    }
-    .materials-header {
-      background: #1a1a1a;
-      color: white;
-      padding: 30px 20px;
-      text-align: center;
-    }
-    .materials-header h1 {
-      margin: 0;
-      font-size: 2.2rem;
-    }
-    .materials-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 20px;
-      padding: 40px;
-    }
-    .material-card {
-      background: white;
-      border-radius: 8px;
-      overflow: hidden;
-      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-      cursor: pointer;
-      transition: 0.3s;
-    }
-    .material-card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 8px 15px rgba(0,0,0,0.15);
-    }
-    .material-card img {
-      width: 100%;
-      height: 180px;
-      object-fit: cover;
-    }
-    .material-card h3 {
-      margin: 15px;
-      font-size: 1.2rem;
-      color: #333;
-    }
-    .material-card p {
-      margin: 0 15px 15px;
-      color: #555;
-    }
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Materials - RS Constructions</title>
+	<link href="assets/images/rs-logos.webp" type="image/ico/gif" sizes="16x16" rel="shortcut icon">
 
-    /* Modal Styles */
-    .modal {
-      display: none;
-      position: fixed;
-      inset: 0;
-      background: rgba(0,0,0,0.6);
-      justify-content: center;
-      align-items: center;
-      z-index: 1000;
-      padding: 20px;
-    }
-    .modal-content {
-      background: white;
-      max-width: 500px;
-      width: 100%;
-      border-radius: 10px;
-      padding: 30px 25px;
-      box-shadow: 0 10px 40px rgba(0,0,0,0.2);
-      position: relative;
-      font-family: Arial, sans-serif;
-      text-align: center;
-    }
-    .modal-close {
-      position: absolute;
-      top: 15px;
-      right: 20px;
-      font-size: 30px;
-      color: #555;
-      cursor: pointer;
-      transition: color 0.3s;
-      font-weight: bold;
-    }
-    .modal-close:hover {
-      color: #ff5722;
-    }
-    .modal-content h3 {
-      margin-top: 0;
-      color: #ff5722;
-      font-size: 1.8rem;
-    }
-    .modal-content p {
-      line-height: 1.6;
-      margin: 15px 0;
-      color: #444;
-    }
-    .modal-content p strong {
-      color: #ff9800;
-    }
+	<!-- Shared site CSS (from your common header) -->
+	<link rel="stylesheet" href="assets/css/header.css">
+	<link rel="stylesheet" href="assets/css/product-cards.css">
+	<link rel="stylesheet" href="assets/css/news.css">
+	<link rel="stylesheet" href="assets/css/slick.css">
+	<link rel="stylesheet" href="assets/css/about-us.css">
+	<link rel="stylesheet" href="assets/css/contact-us.css">
+	<link rel="stylesheet" href="assets/css/footer.css">
 
-    /* CTA Banner */
-    .cta-banner {
-      background: linear-gradient(135deg, #ff9800, #ff5722);
-      color: white;
-      text-align: center;
-      padding: 25px 15px;
-      border-radius: 10px;
-      box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-      font-family: Arial, sans-serif;
-      margin: 20px 40px;
-      animation: popUp 0.8s ease-in-out;
-    }
-    .cta-banner h3 {
-      margin-bottom: 10px;
-      font-size: 24px;
-    }
-    .cta-banner p {
-      font-size: 16px;
-      margin-bottom: 15px;
-    }
-    .cta-btn {
-      display: inline-block;
-      background: white;
-      color: #ff5722;
-      padding: 10px 18px;
-      margin: 5px;
-      border-radius: 6px;
-      font-weight: bold;
-      text-decoration: none;
-      transition: all 0.3s ease;
-    }
-    .cta-btn:hover {
-      background: rgba(255,255,255,0.8);
-      transform: scale(1.05);
-    }
-    .cta-btn.secondary {
-      background: #fff3e0;
-      color: #ff9800;
-    }
-    @keyframes popUp {
-      0% { transform: scale(0.9); opacity: 0; }
-      100% { transform: scale(1); opacity: 1; }
-    }
-  </style>
+	<!-- Page specific styles (your materials styles) -->
+	<style>
+		/* ensure header stays on top */
+		.header-bottom { position: sticky; top: 0; z-index: 999; }
+
+		body {
+		  font-family: Arial, sans-serif;
+		  margin: 0;
+		  background-color: #f9f9f9;
+		}
+		.materials-header {
+		  background: #1a1a1a;
+		  color: white;
+		  padding: 100px 20px;
+		  text-align: center;
+		}
+		.materials-header h1 {
+		  margin-top: 100px;
+		  font-size: 2.2rem;
+		}
+		.materials-grid {
+		  display: grid;
+		  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+		  gap: 20px;
+		  padding: 40px;
+		}
+		.material-card {
+		  background: white;
+		  border-radius: 8px;
+		  overflow: hidden;
+		  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+		  cursor: pointer;
+		  transition: 0.3s;
+		  outline: none;
+		}
+		.material-card:focus,
+		.material-card:hover {
+		  transform: translateY(-5px);
+		  box-shadow: 0 8px 15px rgba(0,0,0,0.15);
+		}
+		.material-card img {
+		  width: 100%;
+		  height: 180px;
+		  object-fit: cover;
+		  display: block;
+		}
+		.material-card h3 {
+		  margin: 15px;
+		  font-size: 1.2rem;
+		  color: #333;
+		}
+		.material-card p {
+		  margin: 0 15px 15px;
+		  color: #555;
+		}
+
+		/* Modal Styles */
+		.modal {
+		  display: none;
+		  position: fixed;
+		  inset: 0;
+		  background: rgba(0,0,0,0.6);
+		  justify-content: center;
+		  align-items: center;
+		  z-index: 10000;
+		  padding: 20px;
+		}
+		.modal-content {
+		  background: white;
+		  max-width: 700px;
+		  width: 100%;
+		  border-radius: 10px;
+		  padding: 30px 25px;
+		  box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+		  position: relative;
+		  font-family: Arial, sans-serif;
+		  text-align: left;
+		}
+		.modal-close {
+		  position: absolute;
+		  top: 12px;
+		  right: 16px;
+		  font-size: 28px;
+		  color: #555;
+		  cursor: pointer;
+		  transition: color 0.3s;
+		  font-weight: bold;
+		  line-height: 1;
+		}
+		.modal-close:hover { color: #ff5722; }
+		.modal-content h3 { margin-top: 0; color: #ff5722; font-size: 1.6rem; }
+		.modal-content p { line-height: 1.6; margin: 12px 0; color: #444; font-size: 1rem; }
+		.modal-content p strong { color: #ff9800; }
+
+		/* CTA Banner */
+		.cta-banner {
+		  background: linear-gradient(135deg, #ff9800, #ff5722);
+		  color: white;
+		  text-align: center;
+		  padding: 25px 15px;
+		  border-radius: 10px;
+		  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+		  font-family: Arial, sans-serif;
+		  margin: 20px 40px;
+		}
+		.cta-banner h3 { margin-bottom: 10px; font-size: 24px; }
+		.cta-banner p { font-size: 16px; margin-bottom: 15px; }
+		.cta-btn {
+		  display: inline-block;
+		  background: white;
+		  color: #ff5722;
+		  padding: 10px 18px;
+		  margin: 5px;
+		  border-radius: 6px;
+		  font-weight: bold;
+		  text-decoration: none;
+		  transition: all 0.3s ease;
+		}
+		.cta-btn:hover { background: rgba(255,255,255,0.9); transform: scale(1.03); }
+		.cta-btn.secondary { background: #fff3e0; color: #ff9800; }
+
+		/* responsive tweaks */
+		@media (max-width: 720px) {
+		  .materials-header { padding: 22px 12px; }
+		  .materials-grid { padding: 20px; }
+		  .modal-content { padding: 20px; }
+		}
+	</style>
 </head>
 <body>
 
-<header class="materials-header">
-  <h1>Our Construction Materials</h1>
-  <p>High-quality materials for your dream project</p>
-</header>
+	<!-- ===== Common Header (your header content) ===== -->
+	<header>
+		<div class="header-bottom">
+			<div class="container">
+				<div class="header-wrapp">
+					<div class="nav-left">
+						<div class="hdr-logo">
+							<a href="/" class="logo-wrapp"><img src="assets/images/rs-logos.webp"
+									alt="rs constructions materials" width="148" height="70" class="logo"></a>
+							<button id="hamburger" type="button"><span></span><span></span><span></span></button>
+							<div class="humburger-menu">
+								<ul class="menus">
+									<li class="menu"> <a href="about.html" class="">
+											<div class="menu-item">
+												<div class="menu-wrap"> <span>About</span></div><span
+													class="icon icon-footerarrow"> </span>
+											</div>
+										</a><li class="menu"> <a href="blogs.html" class="">
+											<div class="menu-item">
+												<div class="menu-wrap"> <span>Blogs</span></div><span
+													class="icon icon-footerarrow"> </span>
+											</div>
+										</a></li>
+									<li class="menu"> <a href="materials.html" class="">
+											<div class="menu-item">
+												<div class="menu-wrap"> <span>Materials</span></div><span
+													class="icon icon-footerarrow"> </span>
+											</div>
+										</a></li>
+									<li class="menu"> <a href="services.html" class="">
+											<div class="menu-item">
+												<div class="menu-wrap"> <span>Services </span></div><span
+													class="icon icon-footerarrow"> </span>
+											</div>
+										</a></li>
+										<li class="menu"> <a href="testimonial.html" class="">
+											<div class="menu-item">
+												<div class="menu-wrap"> <span>Testimonials</span></div><span
+													class="icon icon-footerarrow"> </span>
+											</div>
+										</a></li>
+										<li class="menu"> <a href="contactus.html" class="">
+											<div class="menu-item">
+												<div class="menu-wrap"> <span>Contact Us </span></div><span
+													class="icon icon-footerarrow"> </span>
+											</div>
+										</a></li>
+								</ul>
+							</div>
+						</div>
+					</div>
+					<nav class="nav-primary">
+						<ul class="nav-list">
+							<li class="nav-item"><a href="about.html" title="About" class="nav-link ">About </a></li>
+							<li class="nav-item"><a href="blogs.html" title="Blogs" class="nav-link ">Blogs </a></li>
+							<li class="nav-item"><a href="materials.html" title="Materials"
+									class="nav-link active">Materials</a></li>
+							<li class="nav-item"><a href="services.html" title="Services"
+									class="nav-link ">Services</a></li>
+									<li class="nav-item"><a href="testimonial.html" title="Testimonials"
+									class="nav-link ">Testimonials</a></li>
+							<li class="nav-item"><a href="contactus.html" title="Contact-us" class="nav-link ">Contact
+									Us</a></li>
+						</ul>
+					</nav>
+				</div>
+			</div>
+		</div>
+	</header>
+	<!-- ===== /Header ===== -->
 
-<section class="materials-grid">
+	<!-- ===== Page Content (your original materials content) ===== -->
+	<section class="materials-header">
+	  <h1>Our Construction Materials</h1>
+	  <p>High-quality materials for your dream project</p>
+	</section>
 
-  <div class="material-card" data-id="P001" data-title="Premium Cement" data-desc="Premium cement designed for high-strength structural applications. Ideal for foundations, beams, and slabs, it ensures durable and reliable construction performance. Trusted by builders for consistent quality and long-lasting results. Our cement meets industry standards for excellence and sustainability.">
-    <img src="assets/images/construction-cement.jpg" alt="Cement" />
-    <h3>Premium Cement</h3>
-    <p>High-strength, durable cement ideal for all structural applications including foundations, beams, and slabs.</p>
-  </div>
+	<section class="materials-grid" aria-label="Materials list">
+	  <div class="material-card" data-id="P001" data-title="Premium Cement" data-desc="Premium cement designed for high-strength structural applications. Ideal for foundations, beams, and slabs, it ensures durable and reliable construction performance. Trusted by builders for consistent quality and long-lasting results. Our cement meets industry standards for excellence and sustainability.">
+		<img src="assets/images/construction-cement.jpg" alt="Cement" />
+		<h3>Premium Cement</h3>
+		<p>High-strength, durable cement ideal for all structural applications including foundations, beams, and slabs.</p>
+	  </div>
 
-  <div class="material-card" data-id="P002" data-title="Rubble Stone" data-desc="Natural rubble stones sourced sustainably for eco-friendly construction. Perfect for building strong, durable walls and landscaping. These stones add both strength and aesthetic value to your projects. Widely used in foundations and exterior facades for their toughness and natural look.">
-    <img src="assets/images/rubble-stone.png" alt="Rubble Stone" />
-    <h3>Rubble Stone</h3>
-    <p>Natural, eco-friendly rubble stones perfect for strong, long-lasting walls and landscaping projects.</p>
-  </div>
+	  <div class="material-card" data-id="P002" data-title="Rubble Stone" data-desc="Natural rubble stones sourced sustainably for eco-friendly construction. Perfect for building strong, durable walls and landscaping. These stones add both strength and aesthetic value to your projects. Widely used in foundations and exterior facades for their toughness and natural look.">
+		<img src="assets/images/rubble-stone.png" alt="Rubble Stone" />
+		<h3>Rubble Stone</h3>
+		<p>Natural, eco-friendly rubble stones perfect for strong, long-lasting walls and landscaping projects.</p>
+	  </div>
 
-  <div class="material-card" data-id="P003" data-title="Black River Sand" data-desc="Finely graded black river sand ideal for plastering, masonry, and concrete mixes. Known for excellent binding properties and smooth finish. Carefully filtered to ensure purity and consistent grain size. Supports strong and durable construction projects. Trusted by professionals for quality results.">
-    <img src="assets/images/river-sand.webp" alt="Black River Sand" />
-    <h3>Black River Sand</h3>
-    <p>Finely graded black sand suitable for plastering, concrete mix, and masonry work with excellent binding properties.</p>
-  </div>
+	  <div class="material-card" data-id="P003" data-title="Black River Sand" data-desc="Finely graded black river sand ideal for plastering, masonry, and concrete mixes. Known for excellent binding properties and smooth finish. Carefully filtered to ensure purity and consistent grain size. Supports strong and durable construction projects. Trusted by professionals for quality results.">
+		<img src="assets/images/river-sand.webp" alt="Black River Sand" />
+		<h3>Black River Sand</h3>
+		<p>Finely graded black sand suitable for plastering, concrete mix, and masonry work with excellent binding properties.</p>
+	  </div>
 
-  <div class="material-card" data-id="P004" data-title="Brown River Sand" data-desc="Natural brown river sand used extensively for plastering and construction applications. Offers great compaction and workability. Clean and well-graded for a smooth and strong finish. Environmentally sourced with quality assurance. Enhances the structural integrity of buildings.">
-    <img src="assets/images/brown-river-sand-for-construction.png" alt="Brown River Sand" />
-    <h3>Brown River Sand</h3>
-    <p>Natural brown sand ideal for construction and plastering, offering good compaction and workability.</p>
-  </div>
+	  <div class="material-card" data-id="P004" data-title="Brown River Sand" data-desc="Natural brown river sand used extensively for plastering and construction applications. Offers great compaction and workability. Clean and well-graded for a smooth and strong finish. Environmentally sourced with quality assurance. Enhances the structural integrity of buildings.">
+		<img src="assets/images/brown-river-sand-for-construction.png" alt="Brown River Sand" />
+		<h3>Brown River Sand</h3>
+		<p>Natural brown sand ideal for construction and plastering, offering good compaction and workability.</p>
+	  </div>
 
-  <div class="material-card" data-id="P005" data-title="Washed Sand" data-desc="Clean and washed sand free from impurities, perfect for plastering and concrete applications. Provides a smooth surface finish and strong bonding in mixes. Sourced from quality-checked suppliers ensuring consistent quality. Ideal for high-standard construction projects requiring durability and precision.">
-    <img src="assets/images/river-sand.webp" alt="Washed Sand" />
-    <h3>Washed Sand</h3>
-    <p>Clean, washed sand free from impurities, ideal for high-quality plastering and concrete applications.</p>
-  </div>
+	  <div class="material-card" data-id="P005" data-title="Washed Sand" data-desc="Clean and washed sand free from impurities, perfect for plastering and concrete applications. Provides a smooth surface finish and strong bonding in mixes. Sourced from quality-checked suppliers ensuring consistent quality. Ideal for high-standard construction projects requiring durability and precision.">
+		<img src="assets/images/river-sand.webp" alt="Washed Sand" />
+		<h3>Washed Sand</h3>
+		<p>Clean, washed sand free from impurities, ideal for high-quality plastering and concrete applications.</p>
+	  </div>
 
-  <div class="material-card" data-id="P006" data-title="Washed Concrete Sand" data-desc="Mechanically washed fine aggregates that serve as a perfect substitute for natural river sand in concrete mixes. Enhances durability and workability of concrete. Ensures consistent grain size and cleanliness for optimal construction results. GST: 5%. Trusted by contractors for quality assurance.">
-    <img src="assets/images/concrete-sand.jpg" alt="Washed Concrete Sand" />
-    <h3>Washed Concrete Sand</h3>
-    <p>Mechanically washed fine aggregates, perfect substitute for river sand in concrete mixes for enhanced durability.</p>
-    <p><strong>GST:</strong> 5%</p>
-  </div>
+	  <div class="material-card" data-id="P006" data-title="Washed Concrete Sand" data-desc="Mechanically washed fine aggregates that serve as a perfect substitute for natural river sand in concrete mixes. Enhances durability and workability of concrete. Ensures consistent grain size and cleanliness for optimal construction results. GST: 5%. Trusted by contractors for quality assurance.">
+		<img src="assets/images/concrete-sand.jpg" alt="Washed Concrete Sand" />
+		<h3>Washed Concrete Sand</h3>
+		<p>Mechanically washed fine aggregates, perfect substitute for river sand in concrete mixes for enhanced durability.</p>
+		<p><strong>GST:</strong> 5%</p>
+	  </div>
 
-  <div class="material-card" data-id="P007" data-title="Debris / Soil Filling" data-desc="High-quality debris and soil mix used for land leveling, backfilling, and site preparation. Provides stable foundations and enhances soil compaction. Ideal for preparing construction sites and landscaping projects. Ensures durability and structural integrity. GST: 5%.">
-    <img src="assets/images/broken-bricks-soil-filling.png" alt="Debris and Soil Filling" />
-    <h3>Debris / Soil Filling</h3>
-    <p>High-quality debris and soil mix used for land leveling, backfilling, and site preparation to ensure stable foundations.</p>
-    <p><strong>GST:</strong> 5%</p>
-  </div>
+	  <div class="material-card" data-id="P007" data-title="Debris / Soil Filling" data-desc="High-quality debris and soil mix used for land leveling, backfilling, and site preparation. Provides stable foundations and enhances soil compaction. Ideal for preparing construction sites and landscaping projects. Ensures durability and structural integrity. GST: 5%.">
+		<img src="assets/images/broken-bricks-soil-filling.png" alt="Debris and Soil Filling" />
+		<h3>Debris / Soil Filling</h3>
+		<p>High-quality debris and soil mix used for land leveling, backfilling, and site preparation to ensure stable foundations.</p>
+		<p><strong>GST:</strong> 5%</p>
+	  </div>
 
-  <div class="material-card" data-id="P008" data-title="VSI Crush Sand" data-desc="Manufactured crushed sand produced as a sustainable alternative to natural sand in concrete and plastering. Ensures superior binding and strength. Supports eco-friendly construction practices. Consistent quality and size for excellent mix performance. GST: 5%.">
-    <img src="assets/images/crush-sand.webp" alt="VSI Crush Sand" />
-    <h3>VSI Crush Sand</h3>
-    <p>Manufactured crushed sand used as a sustainable alternative to natural sand in concrete and plastering.</p>
-    <p><strong>GST:</strong> 5%</p>
-  </div>
+	  <div class="material-card" data-id="P008" data-title="VSI Crush Sand" data-desc="Manufactured crushed sand produced as a sustainable alternative to natural sand in concrete and plastering. Ensures superior binding and strength. Supports eco-friendly construction practices. Consistent quality and size for excellent mix performance. GST: 5%.">
+		<img src="assets/images/crush-sand.webp" alt="VSI Crush Sand" />
+		<h3>VSI Crush Sand</h3>
+		<p>Manufactured crushed sand used as a sustainable alternative to natural sand in concrete and plastering.</p>
+		<p><strong>GST:</strong> 5%</p>
+	  </div>
 
-  <div class="material-card" data-id="P009" data-title="VSI Aggregate 10mm-60mm" data-desc="Coarse crushed stones ranging from 10mm to 60mm in size, commonly used as railway ballast and in concrete mixes. Provides strength and durability to construction projects. Sourced with strict quality controls. GST: 5%.">
-    <img src="assets/images/aggregate.webp" alt="VSI Aggregate 10mm" />
-    <h3>VSI Aggregate 10mm-60mm</h3>
-    <p>Coarse crushed stones sized 10mm-60mm, Railway ballast.</p>
-    <p><strong>GST:</strong> 5%</p>
-  </div>
+	  <div class="material-card" data-id="P009" data-title="VSI Aggregate 10mm-60mm" data-desc="Coarse crushed stones ranging from 10mm to 60mm in size, commonly used as railway ballast and in concrete mixes. Provides strength and durability to construction projects. Sourced with strict quality controls. GST: 5%.">
+		<img src="assets/images/aggregate.webp" alt="VSI Aggregate 10mm" />
+		<h3>VSI Aggregate 10mm-60mm</h3>
+		<p>Coarse crushed stones sized 10mm-60mm, Railway ballast.</p>
+		<p><strong>GST:</strong> 5%</p>
+	  </div>
 
-  <div class="material-card" data-id="P010" data-title="Bricks 4 Inch" data-desc="Standard 4-inch clay bricks known for strength and reliability in wall construction. Provides excellent load-bearing capacity and durability. Manufactured under strict quality standards for uniform size and strength. GST: 12%.">
-    <img src="assets/images/bricks.webp" alt="Bricks 4 inch" />
-    <h3>Bricks 4"</h3>
-    <p>Standard 4-inch clay bricks known for their strength and reliability in wall construction.</p>
-    <p><strong>GST:</strong> 12%</p>
-  </div>
+	  <div class="material-card" data-id="P010" data-title="Bricks 4 Inch" data-desc="Standard 4-inch clay bricks known for strength and reliability in wall construction. Provides excellent load-bearing capacity and durability. Manufactured under strict quality standards for uniform size and strength. GST: 12%.">
+		<img src="assets/images/bricks.webp" alt="Bricks 4 inch" />
+		<h3>Bricks 4"</h3>
+		<p>Standard 4-inch clay bricks known for their strength and reliability in wall construction.</p>
+		<p><strong>GST:</strong> 12%</p>
+	  </div>
 
-  <div class="material-card" data-id="P011" data-title="Bricks 6 Inch" data-desc="Heavy-duty 6-inch clay bricks designed for durable, load-bearing walls. Ideal for structures requiring enhanced strength and longevity. Made with high-quality clay and fired for maximum toughness. GST: 12%.">
-    <img src="assets/images/brick.webp" alt="Bricks 6 inch" />
-    <h3>Bricks 6"</h3>
-    <p>Heavy-duty 6-inch clay bricks designed for durable and load-bearing walls.</p>
-    <p><strong>GST:</strong> 12%</p>
-  </div>
+	  <div class="material-card" data-id="P011" data-title="Bricks 6 Inch" data-desc="Heavy-duty 6-inch clay bricks designed for durable, load-bearing walls. Ideal for structures requiring enhanced strength and longevity. Made with high-quality clay and fired for maximum toughness. GST: 12%.">
+		<img src="assets/images/brick.webp" alt="Bricks 6 inch" />
+		<h3>Bricks 6"</h3>
+		<p>Heavy-duty 6-inch clay bricks designed for durable and load-bearing walls.</p>
+		<p><strong>GST:</strong> 12%</p>
+	  </div>
 
-  <div class="material-card" data-id="P012" data-title="AAC Blocks / Fly Ash Bricks" data-desc="Lightweight, energy-efficient AAC blocks and fly ash bricks that promote eco-friendly construction. Excellent insulation properties, reducing energy costs. Provides strong structural support with easy handling. Popular choice for modern sustainable building projects.">
-    <img src="assets/images/aac-blocks.png" alt="AAC Blocks" />
-    <h3>AAC Blocks / Fly Ash Bricks / Blocks</h3>
-    <p>Lightweight, energy-efficient AAC blocks and fly ash bricks for modern, eco-friendly construction.</p>
-  </div>
+	  <div class="material-card" data-id="P012" data-title="AAC Blocks / Fly Ash Bricks" data-desc="Lightweight, energy-efficient AAC blocks and fly ash bricks that promote eco-friendly construction. Excellent insulation properties, reducing energy costs. Provides strong structural support with easy handling. Popular choice for modern sustainable building projects.">
+		<img src="assets/images/aac-blocks.png" alt="AAC Blocks" />
+		<h3>AAC Blocks / Fly Ash Bricks / Blocks</h3>
+		<p>Lightweight, energy-efficient AAC blocks and fly ash bricks for modern, eco-friendly construction.</p>
+	  </div>
 
-  <div class="material-card" data-id="P013" data-title="Need More Materials?" data-desc="Looking for materials not listed here? We can source and supply any construction material you need. Just contact us and we’ll deliver quality products tailored to your project requirements. Your one-stop solution for all building material needs.">
-    <img src="assets/images/need-more-materials.png" alt="More Materials" />
-    <h3>Need More Materials?</h3>
-    <p>Looking for materials not listed here? We can source and supply any construction material you need — just ask us!</p>
-  </div>
+	  <div class="material-card" data-id="P013" data-title="Need More Materials?" data-desc="Looking for materials not listed here? We can source and supply any construction material you need. Just contact us and we’ll deliver quality products tailored to your project requirements. Your one-stop solution for all building material needs.">
+		<img src="assets/images/need-more-materials.png" alt="More Materials" />
+		<h3>Need More Materials?</h3>
+		<p>Looking for materials not listed here? We can source and supply any construction material you need — just ask us!</p>
+	  </div>
+	</section>
 
-</section>
+	<!-- Modal -->
+	<div class="modal" id="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle" aria-describedby="modalDesc">
+	  <div class="modal-content" role="document">
+		<button class="modal-close" id="modalClose" aria-label="Close modal">&times;</button>
+		<h3 id="modalTitle">Title Here</h3>
+		<p><strong>Product ID:</strong> <span id="modalID">P000</span></p>
+		<p id="modalDesc">Description here...</p>
+	  </div>
+	</div>
 
-<!-- Modal -->
-<div class="modal" id="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle" aria-describedby="modalDesc">
-  <div class="modal-content">
-    <span class="modal-close" id="modalClose" aria-label="Close modal">&times;</span>
-    <h3 id="modalTitle">Title Here</h3>
-    <p><strong>Product ID:</strong> <span id="modalID">P000</span></p>
-    <p id="modalDesc">Description here...</p>
-  </div>
-</div>
+	<div class="cta-banner" aria-hidden="false">
+	  <h3>🏗️ Need Building Materials Today?</h3>
+	  <p>Order now and get fast delivery at the best prices. Quality materials for your dream projects!</p>
+	  <a href="tel:+919820953268" class="cta-btn">📞 Call Us Now on +919820953268</a>
+	  <a href="mailto:rsenterprises95m@gmail.com" class="cta-btn secondary">✉️ Email Your Order : rsenterprises95m@gmail.com</a>
+	</div>
 
-<div class="cta-banner">
-  <h3>🏗️ Need Building Materials Today?</h3>
-  <p>Order now and get fast delivery at the best prices. Quality materials for your dream projects!</p>
-  <a href="tel:+919820953268" class="cta-btn">📞 Call Us Now on +919820953268</a>
-  <a href="mailto:rsenterprises95m@gmail.com" class="cta-btn secondary">✉️ Email Your Order : rsenterprises95m@gmail.com</a>
-</div>
+	<!-- ===== Common Footer (your footer content) ===== -->
+	<footer class="footer">
+		<picture>
+			<source type="image/webp" media="(max-width:767px)"
+				srcset="assets/images/Footer.webp, assets/images/Footer.jpg">
+			<source type="image/webp" media="(max-width:1440px)"
+				srcset="assets/images/footer-bg.webp, assets/images/footer-bg.jpg"><img src=""
+				data-src="assets/images/footer-bg.jpg" loading="lazy" alt="rsconstruction" width="1920" height="367"
+				class="lazy footer-bg-img">
+		</picture>
+		<div class="container">
+			<div class="footer-container">
+				<div class="mobile-logo-wrapper"><img src="" data-src="assets/images/rs-logos.webp"
+					alt="rsconstructions-logo" loading="lazy" class="rsconstructions-logo-mobile lazy"></div>
+				<div class="footer-section"><a href="about.html" class="list-title ">About</a></div>
+				<div class="footer-section"><a href="blogs.html" class="list-title ">Blogs</a></div>
+				<div class="footer-section"><a href="materials.html" class="list-title">Material</a></div>
+				<div class="footer-section"><a href="services.html" class="list-title">Services</a></div>
+				<div class="footer-section"><a href="testimonial.html" class="list-title">Testimonials</a></div>
+				<div class="footer-section"><a href="contactus.html" class="list-title">Contact Us</a></div>
+				<div class="footer-section"><a href="javascript:void(0)" class="list-title">Terms &amp; Conditions</a></div>
+				<div class="footer-section">&copy; 2025 RS Constructions. All rights reserved.</div>
+			</div>
+			<div class="footer-container logo-social-icons">
+				<div class="logo-wrapper"><img src="" data-src="assets/images/rs-logos.webp"
+						alt="rs-construction logo" loading="lazy" class="rsconstruction-logo lazy" height="500"
+						width="300"></div>
+				<div class="social-media-wrap">
+					<h4 class="media-wrap-head">Lets Connect</h4>
+					<div class="social-icons"><a
+							href="https://www.instagram.com/rsconstructions_95?igsh=MXQ0bHVjYTkxM21wag=="
+							target="_blank"><span class="icon icon-instagram"></span></a>
+							<!-- <a
+							href="http://www.linkedin.com/in/%20rs-constructions955" target="_blank"><span
+								class="icon icon-linkedin"></span></a> -->
+								<a href="https://x.com/RSConstructio95"
+							target="_blank"><span class="icon icon-twitter"></span></a><a
+							href="https://www.youtube.com/@RSConstructions-x2f" target="_blank"><span
+								class="icon icon-youtube"></span></a><a
+							href="https://www.facebook.com/profile.php?id=61572530949797" target="_blank"><span
+								class="icon icon-facebook"></span></a></div>
+				</div>
+			</div>
+		</div>
+	</footer>
+	<!-- ===== /Footer ===== -->
 
-<script>
-  const modal = document.getElementById('modal');
-  const modalTitle = document.getElementById('modalTitle');
-  const modalID = document.getElementById('modalID');
-  const modalDesc = document.getElementById('modalDesc');
-  const modalClose = document.getElementById('modalClose');
+	<!-- ===== Site Scripts (same as your common footer) ===== -->
+	<script src="assets/js/vendor/jquery-3.7.1.min.js"></script>
+	<script defer src="assets/js/vendor/slick.js"></script>
+	<script defer src="assets/js/global.js"></script>
+	<script defer src="assets/js/news.js"></script>
+	<script src="assets/js/popup.js"></script>
+	<script src="assets/js/about-us.js" defer></script>
+	<script src="assets/js/product-script.js"></script>
 
-  // Open modal with product details and update URL
-  function openModal(id, title, desc, pushState = true) {
-    modalTitle.textContent = title;
-    modalID.textContent = id;
-    modalDesc.textContent = desc;
-    modal.style.display = 'flex';
-    document.body.style.overflow = 'hidden';
-    if (pushState) {
-      const urlTitle = encodeURIComponent(title);
-      const url = `?id=${id}&name=${urlTitle}`;
-      history.pushState({id, title}, '', url);
-    }
-  }
+	<!-- ===== Materials modal script (from your materials page) ===== -->
+	<script>
+		(function () {
+		  const modal = document.getElementById('modal');
+		  const modalTitle = document.getElementById('modalTitle');
+		  const modalID = document.getElementById('modalID');
+		  const modalDesc = document.getElementById('modalDesc');
+		  const modalClose = document.getElementById('modalClose');
 
-  // Close modal and reset URL
-  function closeModal() {
-    modal.style.display = 'none';
-    document.body.style.overflow = 'auto';
-    history.pushState({}, '', window.location.pathname);
-  }
+		  function openModal(id, title, desc, pushState = true) {
+			modalTitle.textContent = title;
+			modalID.textContent = id;
+			modalDesc.textContent = desc;
+			modal.style.display = 'flex';
+			document.body.style.overflow = 'hidden';
+			if (pushState) {
+			  const urlTitle = encodeURIComponent(title);
+			  const url = `?id=${encodeURIComponent(id)}&name=${urlTitle}`;
+			  history.pushState({id, title}, '', url);
+			}
+		  }
 
-  // Add click event to product cards
-  document.querySelectorAll('.material-card').forEach(card => {
-    card.addEventListener('click', () => {
-      openModal(card.dataset.id, card.dataset.title, card.dataset.desc);
-    });
-  });
+		  function closeModal(fromPop) {
+			modal.style.display = 'none';
+			document.body.style.overflow = 'auto';
+			// if this wasn't triggered by popstate, reset URL to base path
+			if (!fromPop) {
+			  history.pushState({}, '', window.location.pathname);
+			}
+		  }
 
-  // Close modal on clicking close button
-  modalClose.addEventListener('click', closeModal);
+		  // attach click handlers to each card
+		  document.querySelectorAll('.material-card').forEach(card => {
+			card.addEventListener('click', () => {
+			  openModal(card.dataset.id, card.dataset.title, card.dataset.desc);
+			});
+			// allow keyboard accessibility
+			card.setAttribute('tabindex', '0');
+			card.addEventListener('keydown', (e) => {
+			  if (e.key === 'Enter' || e.key === ' ') {
+				e.preventDefault();
+				openModal(card.dataset.id, card.dataset.title, card.dataset.desc);
+			  }
+			});
+		  });
 
-  // Close modal on clicking outside content area
-  window.addEventListener('click', e => {
-    if (e.target === modal) {
-      closeModal();
-    }
-  });
+		  modalClose.addEventListener('click', () => closeModal(false));
 
-  // Close modal on pressing ESC key
-  window.addEventListener('keydown', e => {
-    if (e.key === 'Escape' && modal.style.display === 'flex') {
-      closeModal();
-    }
-  });
+		  // Close modal when clicking outside modal-content
+		  window.addEventListener('click', e => {
+			if (e.target === modal) closeModal(false);
+		  });
 
-  // On page load, check URL params for product info, open modal if found
-  window.addEventListener('DOMContentLoaded', () => {
-    const params = new URLSearchParams(window.location.search);
-    const id = params.get('id');
-    const name = params.get('name');
-    if (id && name) {
-      const card = [...document.querySelectorAll('.material-card')].find(c => c.dataset.id === id);
-      if (card) {
-        openModal(card.dataset.id, card.dataset.title, card.dataset.desc, false);
-      }
-    }
-  });
+		  // ESC to close
+		  window.addEventListener('keydown', e => {
+			if (e.key === 'Escape' && modal.style.display === 'flex') {
+			  closeModal(false);
+			}
+		  });
 
-  // Handle back/forward browser buttons
-  window.addEventListener('popstate', (event) => {
-    if (event.state && event.state.id && event.state.title) {
-      const card = [...document.querySelectorAll('.material-card')].find(c => c.dataset.id === event.state.id);
-      if (card) {
-        openModal(card.dataset.id, card.dataset.title, card.dataset.desc, false);
-      }
-    } else {
-      closeModal();
-    }
-  });
-</script>
+		  // open modal from URL params on load (without pushing state again)
+		  window.addEventListener('DOMContentLoaded', () => {
+			const params = new URLSearchParams(window.location.search);
+			const id = params.get('id');
+			const name = params.get('name');
+			if (id && name) {
+			  const card = [...document.querySelectorAll('.material-card')].find(c => c.dataset.id === id);
+			  if (card) {
+				openModal(card.dataset.id, card.dataset.title, card.dataset.desc, false);
+			  }
+			}
+		  });
 
+		  // handle back/forward
+		  window.addEventListener('popstate', (event) => {
+			if (event.state && event.state.id && event.state.title) {
+			  const card = [...document.querySelectorAll('.material-card')].find(c => c.dataset.id === event.state.id);
+			  if (card) {
+				openModal(card.dataset.id, card.dataset.title, card.dataset.desc, false);
+			  }
+			} else {
+			  // no state => close modal
+			  closeModal(true);
+			}
+		  });
+		})();
+	</script>
 </body>
 </html>

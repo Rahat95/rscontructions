@@ -1,174 +1,330 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Our Services - Building Material Supplier</title>
-<style>
-  body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    margin: 0; 
-    background: #f9fafb;
-    color: #333;
-  }
-  header {
-    background: #004d40;
-    color: white;
-    padding: 20px 0;
-    text-align: center;
-  }
-  header h1 {
-    margin: 0;
-    font-weight: 700;
-    letter-spacing: 1.2px;
-  }
-  .services-section {
-    max-width: 1200px;
-    margin: 40px auto;
-    padding: 0 20px;
-  }
-  .service-card {
-    background: white;
-    border-radius: 12px;
-    box-shadow: 0 6px 15px rgba(0,0,0,0.1);
-    padding: 30px;
-    margin-bottom: 30px;
-    display: flex;
-    align-items: center;
-    gap: 25px;
-    opacity: 0;
-    transform: translateY(40px);
-    animation: fadeInUp 0.8s forwards;
-  }
-  .service-card:nth-child(1) { animation-delay: 0.1s; }
-  .service-card:nth-child(2) { animation-delay: 0.3s; }
-  .service-card:nth-child(3) { animation-delay: 0.5s; }
-  .service-card:nth-child(4) { animation-delay: 0.7s; }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Services - R.S.Constructions | Building Material Supplier</title>
 
-  .service-icon {
-    flex-shrink: 0;
-    font-size: 48px;
-    color: #00796b;
-  }
-  .service-content h2 {
-    margin: 0 0 10px;
-    font-size: 1.5rem;
-    color: #004d40;
-  }
-  .service-content p {
-    margin: 0;
-    line-height: 1.5;
-    font-size: 1rem;
-  }
-  @keyframes fadeInUp {
-    to {
-      opacity: 1;
-      transform: translateY(0);
+  <!-- Favicon & shared CSS (same as your common header/footer) -->
+  <link href="assets/images/rs-logos.webp" type="image/ico/gif" sizes="16x16" rel="shortcut icon">
+  <link rel="stylesheet" href="assets/css/header.css">
+  <link rel="stylesheet" href="assets/css/product-cards.css">
+  <link rel="stylesheet" href="assets/css/news.css">
+  <link rel="stylesheet" href="assets/css/slick.css">
+  <link rel="stylesheet" href="assets/css/about-us.css">
+  <link rel="stylesheet" href="assets/css/contact-us.css">
+  <link rel="stylesheet" href="assets/css/footer.css">
+
+  <style>
+    /* Sticky header override to ensure header sits above page content */
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 1200;
+      background: #fff;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.06);
     }
-  }
-  /* Responsive */
-  @media (max-width: 768px) {
-    .service-card {
-      flex-direction: column;
+
+    /* Page layout */
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, sans-serif;
+      background: #f9fafb;
+      color: #222;
+    }
+
+    main {
+      /* ensure content isn't hidden behind sticky header */
+      padding-top: 120px;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding-left: 20px;
+      padding-right: 20px;
+    }
+
+    .page-title {
       text-align: center;
+      margin-bottom: 28px;
     }
+    .page-title h1 {
+      margin: 0;
+      font-size: 2.2rem;
+      color: #1f2937;
+    }
+    .page-title p {
+      color: #555;
+      margin-top: 10px;
+      line-height: 1.6;
+      max-width: 900px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    /* Services cards */
+    .services-section {
+      margin: 24px 0 40px;
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 22px;
+      align-items: start;
+    }
+
+    .service-card {
+      background: #fff;
+      border-radius: 12px;
+      box-shadow: 0 10px 30px rgba(2,6,23,0.06);
+      padding: 26px;
+      display: flex;
+      gap: 22px;
+      align-items: center;
+      transition: transform .28s ease, box-shadow .28s ease;
+      transform: translateY(0);
+      opacity: 1;
+    }
+    .service-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 20px 40px rgba(2,6,23,0.08);
+    }
+
     .service-icon {
-      font-size: 56px;
-      margin-bottom: 15px;
+      flex-shrink: 0;
+      width: 84px;
+      height: 84px;
+      border-radius: 12px;
+      display: grid;
+      place-items: center;
+      font-size: 34px;
+      background: linear-gradient(135deg,#fff3e0,#ffe3cd);
+      color: #ff6a00;
+      box-shadow: 0 6px 18px rgba(255,140,0,0.08);
     }
-  }
+
+    .service-content h2 {
+      margin: 0 0 6px;
+      color: #1f2937;
+      font-size: 1.25rem;
+    }
+    .service-content p {
+      margin: 0;
+      color: #444;
+      line-height: 1.6;
+      font-size: 1rem;
+    }
+
+    /* Staggered entrance animation */
+    .service-card { opacity: 0; transform: translateY(24px); }
+    .service-card.visible { opacity: 1; transform: translateY(0); transition: all 400ms cubic-bezier(.2,.9,.2,1); }
+
+    /* CTA banner */
     .cta-banner {
-        background: linear-gradient(135deg, #ff9800, #ff5722);
-        color: white;
-        text-align: center;
-        padding: 25px 15px;
-        border-radius: 10px;
-        box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-        font-family: Arial, sans-serif;
-        margin: 20px 0;
-        animation: popUp 0.8s ease-in-out;
+      background: linear-gradient(135deg, #ff9800, #ff5722);
+      color: white;
+      text-align: center;
+      padding: 25px 15px;
+      border-radius: 10px;
+      box-shadow: 0 8px 30px rgba(255,87,34,0.12);
+      margin: 28px 0 60px;
     }
-    .cta-banner h3 {
-        margin-bottom: 10px;
-        font-size: 24px;
-    }
-    .cta-banner p {
-        font-size: 16px;
-        margin-bottom: 15px;
-    }
+    .cta-banner h3 { margin: 0 0 8px; font-size: 1.4rem; }
+    .cta-banner p { margin: 0 0 12px; color: rgba(255,255,255,0.95); }
     .cta-btn {
-        display: inline-block;
-        background: white;
-        color: #ff5722;
-        padding: 10px 18px;
-        margin: 5px;
-        border-radius: 6px;
-        font-weight: bold;
-        text-decoration: none;
-        transition: all 0.3s ease;
+      display: inline-block;
+      background: white;
+      color: #ff5722;
+      padding: 10px 16px;
+      margin: 6px;
+      border-radius: 6px;
+      font-weight: 700;
+      text-decoration: none;
+      transition: transform .18s ease;
     }
-    .cta-btn:hover {
-        background: rgba(255,255,255,0.8);
-        transform: scale(1.05);
+    .cta-btn.secondary { background: rgba(255,255,255,0.9); color: #fff3e0; }
+    .cta-btn:hover { transform: translateY(-3px); }
+
+    /* Responsive */
+    @media (min-width: 900px) {
+      .services-section { grid-template-columns: 1fr 1fr; }
     }
-    .cta-btn.secondary {
-        background: #fff3e0;
-        color: #ff9800;
+    @media (max-width: 640px) {
+      .service-card { flex-direction: column; align-items: flex-start; }
+      .service-icon { width: 64px; height: 64px; font-size: 28px; }
     }
-    @keyframes popUp {
-        0% { transform: scale(0.9); opacity: 0; }
-        100% { transform: scale(1); opacity: 1; }
-    }
-</style>
+  </style>
 </head>
 <body>
 
-<header>
-  <h1>Our Services</h1>
-</header>
+  <!-- ========== Header (common) ========== -->
+  <header>
+    <div class="header-bottom">
+      <div class="container">
+        <div class="header-wrapp">
+          <div class="nav-left">
+            <div class="hdr-logo">
+              <a href="/" class="logo-wrapp">
+                <img src="assets/images/rs-logos.webp" alt="rs constructions materials" width="148" height="70" class="logo">
+              </a>
+              <button id="hamburger" type="button"><span></span><span></span><span></span></button>
+              <div class="humburger-menu">
+                <ul class="menus">
+                  <li class="menu"><a href="about.html"><div class="menu-item"><div class="menu-wrap"><span>About</span></div></div></a></li>
+                  <li class="menu"><a href="blogs.html"><div class="menu-item"><div class="menu-wrap"><span>Blogs</span></div></div></a></li>
+                  <li class="menu"><a href="materials.html"><div class="menu-item"><div class="menu-wrap"><span>Materials</span></div></div></a></li>
+                  <li class="menu"><a href="services.html"><div class="menu-item"><div class="menu-wrap"><span>Services</span></div></div></a></li>
+                  <li class="menu"><a href="testimonial.html"><div class="menu-item"><div class="menu-wrap"><span>Testimonials</span></div></div></a></li>
+                  <li class="menu"><a href="contactus.html"><div class="menu-item"><div class="menu-wrap"><span>Contact Us</span></div></div></a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
 
-<section class="services-section">
-
-  <div class="service-card">
-    <div class="service-icon">🏗️</div>
-    <div class="service-content">
-      <h2>Material Supply</h2>
-      <p>We provide high-quality building materials delivered on time, from cement and sand to bricks and aggregates.</p>
+          <nav class="nav-primary">
+            <ul class="nav-list">
+              <li class="nav-item"><a href="about.html" class="nav-link">About</a></li>
+              <li class="nav-item"><a href="blogs.html" class="nav-link">Blogs</a></li>
+              <li class="nav-item"><a href="materials.html" class="nav-link">Materials</a></li>
+              <li class="nav-item"><a href="services.html" class="nav-link active">Services</a></li>
+              <li class="nav-item"><a href="testimonial.html" class="nav-link">Testimonials</a></li>
+              <li class="nav-item"><a href="contactus.html" class="nav-link">Contact Us</a></li>
+            </ul>
+          </nav>
+        </div>
+      </div>
     </div>
-  </div>
+  </header>
+  <!-- ========== /Header ========== -->
 
-  <div class="service-card">
-  <div class="service-icon" aria-label="Debris removal icon" role="img" style="font-size: 2.5rem;">🧹</div>
-  <div class="service-content">
-    <h2>Debris Removal Service</h2>
-    <p>Quick and efficient debris clearance to keep your construction site clean and safe at all times.</p>
-  </div>
-</div>
-
-  <div class="service-card">
-    <div class="service-icon">🔍</div>
-    <div class="service-content">
-      <h2>Material Consultation</h2>
-      <p>Our experts help you select the right materials tailored to your project’s specific needs and budget.</p>
+  <!-- ========== Main ========== -->
+  <main>
+    <div class="page-title">
+      <h1>Our Services</h1>
+      <p>We supply high-quality building materials and end-to-end support — from prompt deliveries to site services and material consultation. Explore our core services below.</p>
     </div>
-  </div>
 
-  <div class="service-card">
-    <div class="service-icon">💬</div>
-    <div class="service-content">
-      <h2>Customer Support</h2>
-      <p>We’re here for you with timely support and assistance to resolve your queries and ensure satisfaction.</p>
+    <section class="services-section" id="servicesList">
+      <div class="service-card">
+        <div class="service-icon" aria-hidden="true">🏗️</div>
+        <div class="service-content">
+          <h2>Material Supply</h2>
+          <p>Reliable supply of cement, aggregates, crushed sand, bricks and more — delivered on time with quality checks at every stage to keep your project moving.</p>
+        </div>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon" aria-hidden="true">🧹</div>
+        <div class="service-content">
+          <h2>Debris Removal & Site Cleanup</h2>
+          <p>Fast, safe debris removal and soil clearing to prepare sites, maintain worker safety, and ensure clean handovers — available for projects large and small.</p>
+        </div>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon" aria-hidden="true">🔍</div>
+        <div class="service-content">
+          <h2>Material Consultation</h2>
+          <p>Expert recommendations for materials that suit your structural and budget requirements — including sustainable alternatives and product comparisons.</p>
+        </div>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon" aria-hidden="true">🚚</div>
+        <div class="service-content">
+          <h2>Logistics & Fast Delivery</h2>
+          <p>Efficient logistics and a strong delivery network ensure materials arrive on schedule across Mumbai and surrounding regions.</p>
+        </div>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon" aria-hidden="true">⚙️</div>
+        <div class="service-content">
+          <h2>On-site Support</h2>
+          <p>Technical support, material testing guidance, and practical advice to help site teams use materials correctly and reduce rework.</p>
+        </div>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon" aria-hidden="true">💬</div>
+        <div class="service-content">
+          <h2>Customer Support & Aftercare</h2>
+          <p>We read and reply to every email — committed to 100% customer responses and ongoing support after delivery to ensure satisfaction.</p>
+        </div>
+      </div>
+
+    </section>
+
+    <div class="cta-banner" role="region" aria-label="Order banner">
+      <h3>🏗️ Need Building Materials Today?</h3>
+      <p>Order now and get fast delivery at competitive prices. Quality materials for your projects — call or email to place your order.</p>
+      <a href="tel:+919820953268" class="cta-btn">📞 Call +91 98209 53268</a>
+      <a href="mailto:rsenterprises95m@gmail.com" class="cta-btn">✉️ rsenterprises95m@gmail.com</a>
     </div>
-  </div>
+  </main>
+  <!-- ========== /Main ========== -->
 
-</section>
+  <!-- ========== Footer (common) ========== -->
+  <footer class="footer">
+    <picture>
+      <source type="image/webp" media="(max-width:767px)" srcset="assets/images/Footer.webp, assets/images/Footer.jpg">
+      <source type="image/webp" media="(max-width:1440px)" srcset="assets/images/footer-bg.webp, assets/images/footer-bg.jpg">
+      <img src="" data-src="assets/images/footer-bg.jpg" loading="lazy" alt="rsconstruction" width="1920" height="367" class="lazy footer-bg-img">
+    </picture>
+    <div class="container">
+      <div class="footer-container">
+        <div class="mobile-logo-wrapper"><img src="" data-src="assets/images/rs-logos.webp" alt="rsconstructions-logo" loading="lazy" class="rsconstructions-logo-mobile lazy"></div>
+        <div class="footer-section"><a href="about.html" class="list-title">About</a></div>
+        <div class="footer-section"><a href="blogs.html" class="list-title">Blogs</a></div>
+        <div class="footer-section"><a href="materials.html" class="list-title">Material</a></div>
+        <div class="footer-section"><a href="services.html" class="list-title">Services</a></div>
+        <div class="footer-section"><a href="testimonial.html" class="list-title">Testimonials</a></div>
+        <div class="footer-section"><a href="contactus.html" class="list-title">Contact Us</a></div>
+        <div class="footer-section"><a href="javascript:void(0)" class="list-title">Terms &amp; Conditions</a></div>
+        <div class="footer-section">&copy; 2025 RS Constructions. All rights reserved.</div>
+      </div>
+      <div class="footer-container logo-social-icons">
+        <div class="logo-wrapper"><img src="" data-src="assets/images/rs-logos.webp" alt="rs-construction logo" loading="lazy" class="rsconstruction-logo lazy" height="500" width="300"></div>
+        <div class="social-media-wrap">
+					<h4 class="media-wrap-head">Lets Connect</h4>
+					<div class="social-icons"><a
+							href="https://www.instagram.com/rsconstructions_95?igsh=MXQ0bHVjYTkxM21wag=="
+							target="_blank"><span class="icon icon-instagram"></span></a>
+							<!-- <a
+							href="http://www.linkedin.com/in/%20rs-constructions955" target="_blank"><span
+								class="icon icon-linkedin"></span></a> -->
+								<a href="https://x.com/RSConstructio95"
+							target="_blank"><span class="icon icon-twitter"></span></a><a
+							href="https://www.youtube.com/@RSConstructions-x2f" target="_blank"><span
+								class="icon icon-youtube"></span></a><a
+							href="https://www.facebook.com/profile.php?id=61572530949797" target="_blank"><span
+								class="icon icon-facebook"></span></a></div>
+				</div>
+      </div>
+    </div>
+  </footer>
+  <!-- ========== /Footer ========== -->
 
-<div class="cta-banner">
-    <h3>🏗️ Need Building Materials Today?</h3>
-    <p>Order now and get fast delivery at the best prices. Quality materials for your dream projects!</p>
-    <a href="tel:+919820953268" class="cta-btn">📞 Call Us Now on +919820953268</a>
-    <a href="mailto:rsenterprises95m@gmail.com" class="cta-btn secondary">✉️ Email Your Order : rsenterprises95m@gmail.com</a>
-</div>
+  <!-- ========== Scripts ========== -->
+  <script src="assets/js/vendor/jquery-3.7.1.min.js"></script>
+  <script defer src="assets/js/vendor/slick.js"></script>
+  <script defer src="assets/js/global.js"></script>
+  <script defer src="assets/js/news.js"></script>
+  <script src="assets/js/popup.js"></script>
+  <script src="assets/js/about-us.js" defer></script>
+  <script src="assets/js/product-script.js"></script>
 
+  <script>
+    // simple JS to stagger-animate service cards when they come into view
+    (function () {
+      const cards = Array.from(document.querySelectorAll('.service-card'));
+      function reveal() {
+        const triggerY = window.innerHeight * 0.85;
+        cards.forEach((c, i) => {
+          if (c.getBoundingClientRect().top < triggerY) {
+            setTimeout(() => c.classList.add('visible'), i * 100);
+          }
+        });
+      }
+      window.addEventListener('load', reveal);
+      window.addEventListener('scroll', reveal);
+    })();
+  </script>
 </body>
 </html>

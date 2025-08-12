@@ -1,126 +1,183 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Testimonials - RS Constructions</title>
-  <style>
-    body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      margin: 0;
-      background-color: #f8f8f8;
-      color: #333;
-    }
-    header {
-      background: #ff5722;
-      color: white;
-      padding: 40px 20px;
-      text-align: center;
-    }
-    header h1 {
-      margin: 0;
-      font-size: 2.8rem;
-      letter-spacing: 1px;
-    }
-    .testimonials-container {
-      max-width: 900px;
-      margin: 40px auto;
-      padding: 0 20px;
-      display: flex;
-      flex-direction: column;
-      gap: 30px;
-    }
-    .testimonial-card {
-      background: white;
-      border-radius: 12px;
-      padding: 25px 30px;
-      box-shadow: 0 8px 20px rgba(0,0,0,0.1);
-      font-style: italic;
-      color: #555;
-      position: relative;
-      transition: transform 0.3s ease;
-    }
-    .testimonial-card:hover {
-      transform: translateY(-8px);
-      box-shadow: 0 12px 28px rgba(0,0,0,0.15);
-    }
-    .testimonial-content {
-      font-size: 1.1rem;
-      line-height: 1.6;
-      min-height: 130px;
-    }
-    .testimonial-author {
-      margin-top: 20px;
-      font-weight: 700;
-      color: #ff5722;
-      font-size: 1.1rem;
-      text-align: right;
-    }
-    .testimonial-company {
-      color: #777;
-      font-size: 0.9rem;
-      text-align: right;
-      font-weight: 500;
-    }
-    @media (max-width: 480px) {
-      .testimonial-card {
-        padding: 20px 15px;
-      }
-      .testimonial-content {
-        font-size: 1rem;
-      }
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>R.S.Constructions | Building Material Supplier</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    
+    <link href="assets/images/rs-logos.webp" type="image/ico/gif" sizes="16x16" rel="shortcut icon">
+
+    <link rel="stylesheet" href="assets/css/header.css">
+    <link rel="stylesheet" href="assets/css/product-cards.css">
+    <link rel="stylesheet" href="assets/css/news.css">
+    <link rel="stylesheet" href="assets/css/slick.css">
+    <link rel="stylesheet" href="assets/css/about-us.css">
+    <link rel="stylesheet" href="assets/css/contact-us.css">
+    <link rel="stylesheet" href="assets/css/footer.css">
+
+    <style>
+        /* Testimonials styling */
+        .testimonials-section {
+            background: #f9f9f9;
+            padding: 50px 20px;
+            text-align: center;
+        }
+        .testimonials-section h2 {
+            font-size: 2rem;
+            margin-bottom: 30px;
+            color: #333;
+        }
+        .testimonial {
+            max-width: 800px;
+            margin: 20px auto;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            font-size: 1.1rem;
+            line-height: 1.6;
+        }
+        .testimonial-author {
+            font-weight: bold;
+            margin-top: 10px;
+            color: #555;
+        }
+    </style>
 </head>
+
 <body>
+    <header>
+        <div class="header-bottom">
+            <div class="container">
+                <div class="header-wrapp">
+                    <div class="nav-left">
+                        <div class="hdr-logo">
+                            <a href="/" class="logo-wrapp"><img src="assets/images/rs-logos.webp"
+                                    alt="rs constructions materials" width="148" height="70" class="logo"></a>
+                            <button id="hamburger" type="button"><span></span><span></span><span></span></button>
+                            <div class="humburger-menu">
+                                <ul class="menus">
+                                    <li class="menu"><a href="about.html"><div class="menu-item"><div class="menu-wrap"><span>About</span></div></div></a></li>
+                                    <li class="menu"><a href="blogs.html"><div class="menu-item"><div class="menu-wrap"><span>Blogs</span></div></div></a></li>
+                                    <li class="menu"><a href="materials.html"><div class="menu-item"><div class="menu-wrap"><span>Materials</span></div></div></a></li>
+                                    <li class="menu"><a href="services.html"><div class="menu-item"><div class="menu-wrap"><span>Services</span></div></div></a></li>
+                                    <li class="menu"><a href="testimonial.html"><div class="menu-item"><div class="menu-wrap"><span>Testimonials</span></div></div></a></li>
+                                    <li class="menu"><a href="contactus.html"><div class="menu-item"><div class="menu-wrap"><span>Contact Us</span></div></div></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <nav class="nav-primary">
+                        <ul class="nav-list">
+                            <li class="nav-item"><a href="about.html" class="nav-link">About</a></li>
+                            <li class="nav-item"><a href="blogs.html" class="nav-link">Blogs</a></li>
+                            <li class="nav-item"><a href="materials.html" class="nav-link">Materials</a></li>
+                            <li class="nav-item"><a href="services.html" class="nav-link">Services</a></li>
+                            <li class="nav-item"><a href="testimonial.html" class="nav-link">Testimonials</a></li>
+                            <li class="nav-item"><a href="contactus.html" class="nav-link">Contact Us</a></li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </header>
 
-<header>
-  <h1>What Our Clients Say</h1>
-</header>
+    <!-- Testimonials Section -->
+    <!-- Testimonials Section -->
+<section class="testimonials-section">
+    <h2>What Our Clients Say</h2>
 
-<section class="testimonials-container">
-
-  <div class="testimonial-card">
-    <div class="testimonial-content">
-      "RS Constructions has been our trusted supplier for many years. Their punctual deliveries and premium-quality materials consistently support our complex projects. The team is responsive and attentive to our needs. We are grateful for their continued partnership."
+    <div class="testimonial">
+        "RS Constructions delivered our building materials on time, with excellent quality. Their professionalism is unmatched."
+        <div class="testimonial-author">- Ajay Kumar, Project Manager, L&T Construction</div>
     </div>
-    <div class="testimonial-author">Mr. Rahul Mehta</div>
-    <div class="testimonial-company">Wadhwa Group</div>
-  </div>
 
-  <div class="testimonial-card">
-    <div class="testimonial-content">
-      "Working with RS Enterprises has greatly enhanced our project efficiency. They supply high-grade materials on time, every time. Their customer service team is always helpful and knowledgeable. We highly recommend them for reliable construction supplies."
+    <div class="testimonial">
+        "From start to finish, the team was responsive and reliable. I highly recommend them for any construction needs."
+        <div class="testimonial-author">- Sunita Sharma, Procurement Head, Shapoorji Pallonji</div>
     </div>
-    <div class="testimonial-author">Ms. Priya Jangid</div>
-    <div class="testimonial-company">Jangid Group</div>
-  </div>
 
-  <div class="testimonial-card">
-    <div class="testimonial-content">
-      "RS Constructions is our go-to supplier for quality materials. Their products meet all industry standards and help us maintain project schedules without delays. The professionalism and dedication of their team are impressive. We trust them for all our construction needs."
+    <div class="testimonial">
+        "They made sure our site had everything ready without delays. Truly a trustworthy supplier."
+        <div class="testimonial-author">- Manish Gupta, Site Engineer, Tata Projects</div>
     </div>
-    <div class="testimonial-author">Mr. Amit Shah</div>
-    <div class="testimonial-company">Compass Group</div>
-  </div>
 
-  <div class="testimonial-card">
-    <div class="testimonial-content">
-      "From start to finish, RS Enterprises offers exceptional support and products. Their sustainable material options align with our eco-conscious projects. We appreciate their commitment to quality and customer satisfaction. Partnering with them has been a positive experience."
+    <div class="testimonial">
+        "Affordable pricing and top-notch quality. I will definitely be using their services again."
+        <div class="testimonial-author">- Priya Singh, Purchase Officer, Godrej Construction</div>
     </div>
-    <div class="testimonial-author">Mrs. Kavita Singh</div>
-    <div class="testimonial-company">Sidus Buildcon</div>
-  </div>
 
-  <div class="testimonial-card">
-    <div class="testimonial-content">
-      "RS Constructions has proven to be an invaluable partner in many of our developments. Their reliable supply chain and quality control ensure our projects stay on track. We admire their transparency and excellent communication. They are a supplier we can count on."
+    <div class="testimonial">
+        "Our metro project needed bulk deliveries without any compromise on quality. RS Constructions handled it flawlessly."
+        <div class="testimonial-author">- Rahul Verma, Senior Engineer, Afcons Infrastructure</div>
     </div>
-    <div class="testimonial-author">Mr. Jayesh Patel</div>
-    <div class="testimonial-company">Jayesh Jagruti Developers</div>
-  </div>
 
+    <div class="testimonial">
+        "They supplied high-grade materials for our residential township project. Always on time, always professional."
+        <div class="testimonial-author">- Kavita Mehta, Project Head, Lodha Group</div>
+    </div>
+
+    <div class="testimonial">
+        "For our high-rise project in Mumbai, RS Constructions ensured consistent supply even during peak demand."
+        <div class="testimonial-author">- Rohan Desai, Supply Chain Manager, Hiranandani Group</div>
+    </div>
+
+    <div class="testimonial">
+        "The quality checks they maintain are at par with international standards. Perfect partner for large-scale construction."
+        <div class="testimonial-author">- Sanjay Patil, Quality Manager, JMC Projects</div>
+    </div>
 </section>
 
+
+    <footer class="footer">
+        <picture>
+            <source type="image/webp" media="(max-width:767px)"
+                srcset="assets/images/Footer.webp, assets/images/Footer.jpg">
+            <source type="image/webp" media="(max-width:1440px)"
+                srcset="assets/images/footer-bg.webp, assets/images/footer-bg.jpg">
+            <img src="" data-src="assets/images/footer-bg.jpg" loading="lazy" alt="rsconstruction" width="1920" height="367" class="lazy footer-bg-img">
+        </picture>
+        <div class="container">
+            <div class="footer-container">
+                <div class="mobile-logo-wrapper"><img src="" data-src="assets/images/rs-logos.webp" alt="rsconstructions-logo" loading="lazy" class="rsconstructions-logo-mobile lazy"></div>
+                <div class="footer-section"><a href="about.html" class="list-title ">About</a></div>
+                <div class="footer-section"><a href="blogs.html" class="list-title ">Blogs</a></div>
+                <div class="footer-section"><a href="materials.html" class="list-title">Material</a></div>
+                <div class="footer-section"><a href="services.html" class="list-title">Services</a></div>
+                <div class="footer-section"><a href="testimonial.html" class="list-title">Testimonials</a></div>
+                <div class="footer-section"><a href="contactus.html" class="list-title">Contact Us</a></div>
+                <div class="footer-section"><a href="javascript:void(0)" class="list-title">Terms &amp; Conditions</a></div>
+                <div class="footer-section">&copy; 2025 RS Constructions. All rights reserved.</div>
+            </div>
+            <div class="footer-container logo-social-icons">
+                <div class="logo-wrapper"><img src="" data-src="assets/images/rs-logos.webp" alt="rs-construction logo" loading="lazy" class="rsconstruction-logo lazy" height="500" width="300"></div>
+                <div class="social-media-wrap">
+					<h4 class="media-wrap-head">Lets Connect</h4>
+					<div class="social-icons"><a
+							href="https://www.instagram.com/rsconstructions_95?igsh=MXQ0bHVjYTkxM21wag=="
+							target="_blank"><span class="icon icon-instagram"></span></a>
+							<!-- <a
+							href="http://www.linkedin.com/in/%20rs-constructions955" target="_blank"><span
+								class="icon icon-linkedin"></span></a> -->
+								<a href="https://x.com/RSConstructio95"
+							target="_blank"><span class="icon icon-twitter"></span></a><a
+							href="https://www.youtube.com/@RSConstructions-x2f" target="_blank"><span
+								class="icon icon-youtube"></span></a><a
+							href="https://www.facebook.com/profile.php?id=61572530949797" target="_blank"><span
+								class="icon icon-facebook"></span></a></div>
+				</div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="assets/js/vendor/jquery-3.7.1.min.js"></script>
+    <script defer src="assets/js/vendor/slick.js"></script>
+    <script defer src="assets/js/global.js"></script>
+    <script src="assets/js/news.js"></script>
+    <script src="assets/js/popup.js"></script>
+    <script src="assets/js/about-us.js" defer></script>
+    <script src="assets/js/product-script.js"></script>
 </body>
 </html>

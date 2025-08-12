@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>About Us - Premium Building Material Supplier</title>
 
 <!-- AOS Animation Library -->
-<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
 
 <style>
 body {
@@ -60,6 +60,48 @@ body {
   margin-bottom: 20px;
 }
 
+/* Work Experience Section */
+.work-experience {
+  max-width: 1200px;
+  margin: 60px auto;
+  padding: 40px 20px;
+  background: white;
+  border-radius: 15px;
+  box-shadow: 0 5px 25px rgba(0,0,0,0.1);
+  text-align: center;
+}
+.work-experience h2 {
+  color: #ff9800;
+  font-size: 2.2rem;
+  margin-bottom: 25px;
+}
+.work-experience p {
+  font-size: 1.1rem;
+  margin-bottom: 15px;
+}
+.client-list {
+  list-style: none;
+  padding: 0;
+  margin-top: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+.client-list li {
+  background: #ff9800;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 30px;
+  font-weight: bold;
+  box-shadow: 0 2px 8px rgba(255, 152, 0, 0.4);
+  transition: background 0.3s ease;
+}
+.client-list li:hover {
+  background: #e68a00;
+  cursor: default;
+}
+
 /* Highlight Box */
 .highlight {
   background: #fff3e0;
@@ -95,6 +137,10 @@ body {
   .about-section {
     grid-template-columns: 1fr;
   }
+  .client-list {
+    flex-direction: column;
+    gap: 10px;
+  }
 }
 </style>
 </head>
@@ -109,7 +155,7 @@ body {
 <!-- About Section -->
 <section class="about-section">
   <div data-aos="fade-right">
-    <img src="assets/images/premium-building-material.png" alt="Premium Building Materials">
+    <img src="assets/images/premium-building-material.png" alt="Premium Building Materials" />
   </div>
   <div class="about-text" data-aos="fade-left">
     <h2>Who We Are</h2>
@@ -120,13 +166,27 @@ body {
   </div>
 </section>
 
+<!-- Work Experience Section -->
+<section class="work-experience" data-aos="fade-up">
+  <h2>Our Work Experience</h2>
+  <p>We have proudly partnered with some of the biggest names in construction and real estate development. Our expertise and reliability have earned us long-lasting relationships and successful projects.</p>
+  <ul class="client-list">
+    <li>Wadhwa Group</li>
+    <li>Jangid Group</li>
+    <li>Group Compass</li>
+    <li>Sidus Buildcon</li>
+    <li>Jayesh Jagruti Developers</li>
+    <li>And Many More</li>
+  </ul>
+</section>
+
 <!-- Mission & Values -->
 <section class="mission" data-aos="zoom-in">
   <h3>Our Mission & Vision</h3>
   <p>To provide reliable, sustainable, and cost-effective construction materials that help shape strong and lasting structures.</p>
   <p>Empowering Builders & Architects with a consistent supply of premium materials, so projects move forward without delays.</p>
-    <p>Delivering Beyond Products by offering advice, technical knowledge, and dependable customer support.</p>
-    <p>Ensuring Accessibility so even small-scale projects can benefit from the same quality as large developments.</p>
+  <p>Delivering Beyond Products by offering advice, technical knowledge, and dependable customer support.</p>
+  <p>Ensuring Accessibility so even small-scale projects can benefit from the same quality as large developments.</p>
   <h3>Our Values</h3>
   <ul>
     <li>✔ Unmatched Quality – Only trusted, tested materials</li>

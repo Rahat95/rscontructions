@@ -1,209 +1,268 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>About Us - Premium Building Material Supplier</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>About Us - R.S.Constructions | Building Material Supplier</title>
 
-<!-- AOS Animation Library -->
-<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <link href="assets/images/rs-logos.webp" type="image/ico/gif" sizes="16x16" rel="shortcut icon">
+    <link rel="stylesheet" href="assets/css/header.css">
+    <link rel="stylesheet" href="assets/css/product-cards.css">
+    <link rel="stylesheet" href="assets/css/news.css">
+    <link rel="stylesheet" href="assets/css/slick.css">
+    <link rel="stylesheet" href="assets/css/about-us.css">
+    <link rel="stylesheet" href="assets/css/contact-us.css">
+    <link rel="stylesheet" href="assets/css/footer.css">
 
-<style>
-body {
-  margin: 0;
-  font-family: 'Segoe UI', sans-serif;
-  background: #f8f8f8;
-  color: #333;
-}
+    <!-- AOS Animation Library -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
 
-/* Hero Section */
-.about-hero {
-  background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
-              url('assets/images/construction-hero.jpg') center/cover no-repeat;
-  color: white;
-  text-align: center;
-  padding: 100px 20px;
-}
-.about-hero h1 {
-  font-size: 3rem;
-  margin-bottom: 10px;
-}
-.about-hero p {
-  font-size: 1.2rem;
-  max-width: 700px;
-  margin: auto;
-  opacity: 0.9;
-}
-
-/* About Section */
-.about-section {
-  max-width: 1200px;
-  margin: auto;
-  padding: 60px 20px;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 40px;
-  align-items: center;
-}
-.about-section img {
-  width: 100%;
-  border-radius: 15px;
-  box-shadow: 0 5px 25px rgba(0,0,0,0.1);
-}
-.about-text h2 {
-  font-size: 2rem;
-  color: #ff9800;
-  margin-bottom: 15px;
-}
-.about-text p {
-  line-height: 1.7;
-  margin-bottom: 20px;
-}
-
-/* Work Experience Section */
-.work-experience {
-  max-width: 1200px;
-  margin: 60px auto;
-  padding: 40px 20px;
-  background: white;
-  border-radius: 15px;
-  box-shadow: 0 5px 25px rgba(0,0,0,0.1);
-  text-align: center;
-}
-.work-experience h2 {
-  color: #ff9800;
-  font-size: 2.2rem;
-  margin-bottom: 25px;
-}
-.work-experience p {
-  font-size: 1.1rem;
-  margin-bottom: 15px;
-}
-.client-list {
-  list-style: none;
-  padding: 0;
-  margin-top: 20px;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 20px;
-}
-.client-list li {
-  background: #ff9800;
-  color: white;
-  padding: 10px 20px;
-  border-radius: 30px;
-  font-weight: bold;
-  box-shadow: 0 2px 8px rgba(255, 152, 0, 0.4);
-  transition: background 0.3s ease;
-}
-.client-list li:hover {
-  background: #e68a00;
-  cursor: default;
-}
-
-/* Highlight Box */
-.highlight {
-  background: #fff3e0;
-  padding: 20px;
-  border-left: 5px solid #ff9800;
-  border-radius: 10px;
-  font-weight: bold;
-}
-
-/* Mission Section */
-.mission {
-  background: white;
-  margin-top: 50px;
-  padding: 40px;
-  border-radius: 15px;
-  box-shadow: 0 4px 20px rgba(0,0,0,0.05);
-}
-.mission h3 {
-  color: #ff9800;
-  margin-bottom: 15px;
-}
-.mission ul {
-  list-style: none;
-  padding: 0;
-}
-.mission ul li {
-  padding: 8px 0;
-  border-bottom: 1px solid #eee;
-}
-
-/* Responsive */
-@media (max-width: 900px) {
-  .about-section {
-    grid-template-columns: 1fr;
-  }
-  .client-list {
-    flex-direction: column;
-    gap: 10px;
-  }
-}
-</style>
+    <style>
+        /* About page specific styles */
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', sans-serif;
+            background: #f8f8f8;
+            color: #333;
+        }
+        .about-hero {
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
+                        url('assets/images/construction-hero.jpg') center/cover no-repeat;
+            color: white;
+            text-align: center;
+            padding: 100px 20px;
+        }
+        .about-hero h1 {
+            font-size: 3rem;
+            margin-bottom: 10px;
+        }
+        .about-hero p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: auto;
+            opacity: 0.9;
+        }
+        .about-section {
+            max-width: 1200px;
+            margin: auto;
+            padding: 60px 20px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: center;
+        }
+        .about-section img {
+            width: 100%;
+            border-radius: 15px;
+            box-shadow: 0 5px 25px rgba(0,0,0,0.1);
+        }
+        .about-text h2 {
+            font-size: 2rem;
+            color: #ff9800;
+            margin-bottom: 15px;
+        }
+        .about-text p {
+            line-height: 1.7;
+            margin-bottom: 20px;
+        }
+        .work-experience {
+            max-width: 1200px;
+            margin: 60px auto;
+            padding: 40px 20px;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 5px 25px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+        .work-experience h2 {
+            color: #ff9800;
+            font-size: 2.2rem;
+            margin-bottom: 25px;
+        }
+        .client-list {
+            list-style: none;
+            padding: 0;
+            margin-top: 20px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+        }
+        .client-list li {
+            background: #ff9800;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 30px;
+            font-weight: bold;
+            box-shadow: 0 2px 8px rgba(255, 152, 0, 0.4);
+            transition: background 0.3s ease;
+        }
+        .client-list li:hover {
+            background: #e68a00;
+        }
+        .highlight {
+            background: #fff3e0;
+            padding: 20px;
+            border-left: 5px solid #ff9800;
+            border-radius: 10px;
+            font-weight: bold;
+        }
+        .mission {
+            background: white;
+            margin-top: 50px;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+        }
+        .mission h3 {
+            color: #ff9800;
+            margin-bottom: 15px;
+        }
+        @media (max-width: 900px) {
+            .about-section {
+                grid-template-columns: 1fr;
+            }
+            .client-list {
+                flex-direction: column;
+                gap: 10px;
+            }
+        }
+    </style>
 </head>
 <body>
 
-<!-- Hero -->
-<section class="about-hero" data-aos="fade-in">
-  <h1>About Us</h1>
-  <p>We supply top-quality building materials that power construction projects — from small homes to massive infrastructure, always delivering on time and on trust.</p>
-</section>
+    <!-- Header -->
+    <header>
+        <div class="header-bottom">
+            <div class="container">
+                <div class="header-wrapp">
+                    <div class="nav-left">
+                        <div class="hdr-logo">
+                            <a href="/" class="logo-wrapp"><img src="assets/images/rs-logos.webp" alt="rs constructions materials" width="148" height="70" class="logo"></a>
+                            <button id="hamburger" type="button"><span></span><span></span><span></span></button>
+                            <div class="humburger-menu">
+                                <ul class="menus">
+                                    <li class="menu"><a href="about.html"><div class="menu-item"><div class="menu-wrap"><span>About</span></div></div></a></li>
+                                    <li class="menu"><a href="blogs.html"><div class="menu-item"><div class="menu-wrap"><span>Blogs</span></div></div></a></li>
+                                    <li class="menu"><a href="materials.html"><div class="menu-item"><div class="menu-wrap"><span>Materials</span></div></div></a></li>
+                                    <li class="menu"><a href="services.html"><div class="menu-item"><div class="menu-wrap"><span>Services</span></div></div></a></li>
+                                    <li class="menu"><a href="testimonial.html"><div class="menu-item"><div class="menu-wrap"><span>Testimonials</span></div></div></a></li>
+                                    <li class="menu"><a href="contactus.html"><div class="menu-item"><div class="menu-wrap"><span>Contact Us</span></div></div></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <nav class="nav-primary">
+                        <ul class="nav-list">
+                            <li class="nav-item"><a href="about.html" class="nav-link active">About</a></li>
+                            <li class="nav-item"><a href="blogs.html" class="nav-link">Blogs</a></li>
+                            <li class="nav-item"><a href="materials.html" class="nav-link">Materials</a></li>
+                            <li class="nav-item"><a href="services.html" class="nav-link">Services</a></li>
+                            <li class="nav-item"><a href="testimonial.html" class="nav-link">Testimonials</a></li>
+                            <li class="nav-item"><a href="contactus.html" class="nav-link">Contact Us</a></li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </header>
 
-<!-- About Section -->
-<section class="about-section">
-  <div data-aos="fade-right">
-    <img src="assets/images/premium-building-material.png" alt="Premium Building Materials" />
-  </div>
-  <div class="about-text" data-aos="fade-left">
-    <h2>Who We Are</h2>
-    <p>At <strong>R.S.ENTERPRISES</strong>, we go beyond supplying materials — we deliver confidence. Our product range includes cement, aggregates, riversand, crushsand, and more, sourced from trusted manufacturers for guaranteed durability.</p>
-    <p>Whether you’re a contractor, architect, or homeowner, we ensure that every delivery is on time, every product meets quality standards, and every customer gets 100% support.</p>
-    <p>Our role is to make sure that story stands on a foundation of strength, quality, and trust.</p>
-    <div class="highlight">📧 We read and reply to every email. Your queries are our priority.</div>
-  </div>
-</section>
+    <!-- About Us Page Content -->
+    <section class="about-hero" data-aos="fade-in">
+        <h1>About Us</h1>
+        <p>We supply top-quality building materials that power construction projects — from small homes to massive infrastructure, always delivering on time and on trust.</p>
+    </section>
 
-<!-- Work Experience Section -->
-<section class="work-experience" data-aos="fade-up">
-  <h2>Our Work Experience</h2>
-  <p>We have proudly partnered with some of the biggest names in construction and real estate development. Our expertise and reliability have earned us long-lasting relationships and successful projects.</p>
-  <ul class="client-list">
-    <li>Wadhwa Group</li>
-    <li>Jangid Group</li>
-    <li>Group Compass</li>
-    <li>Sidus Buildcon</li>
-    <li>Jayesh Jagruti Developers</li>
-    <li>And Many More</li>
-  </ul>
-</section>
+    <section class="about-section">
+        <div data-aos="fade-right">
+            <img src="assets/images/premium-building-material.png" alt="Premium Building Materials" />
+        </div>
+        <div class="about-text" data-aos="fade-left">
+            <h2>Who We Are</h2>
+            <p>At <strong>R.S.ENTERPRISES</strong>, we go beyond supplying materials — we deliver confidence. Our product range includes cement, aggregates, riversand, crushsand, and more, sourced from trusted manufacturers for guaranteed durability.</p>
+            <p>Whether you’re a contractor, architect, or homeowner, we ensure that every delivery is on time, every product meets quality standards, and every customer gets 100% support.</p>
+            <p>Our role is to make sure that story stands on a foundation of strength, quality, and trust.</p>
+            <div class="highlight">📧 We read and reply to every email. Your queries are our priority.</div>
+        </div>
+    </section>
 
-<!-- Mission & Values -->
-<section class="mission" data-aos="zoom-in">
-  <h3>Our Mission & Vision</h3>
-  <p>To provide reliable, sustainable, and cost-effective construction materials that help shape strong and lasting structures.</p>
-  <p>Empowering Builders & Architects with a consistent supply of premium materials, so projects move forward without delays.</p>
-  <p>Delivering Beyond Products by offering advice, technical knowledge, and dependable customer support.</p>
-  <p>Ensuring Accessibility so even small-scale projects can benefit from the same quality as large developments.</p>
-  <h3>Our Values</h3>
-  <ul>
-    <li>✔ Unmatched Quality – Only trusted, tested materials</li>
-    <li>✔ Timely Deliveries – We respect your construction timelines</li>
-    <li>✔ Transparent Pricing – No surprises, only trust</li>
-    <li>✔ Eco-Conscious – Supporting green building solutions</li>
-  </ul>
-</section>
+    <section class="work-experience" data-aos="fade-up">
+        <h2>Our Work Experience</h2>
+        <p>We have proudly partnered with some of the biggest names in construction and real estate development.</p>
+        <ul class="client-list">
+            <li>Wadhwa Group</li>
+            <li>Jangid Group</li>
+            <li>Group Compass</li>
+            <li>Sidus Buildcon</li>
+            <li>Jayesh Jagruti Developers</li>
+            <li>And Many More</li>
+        </ul>
+    </section>
 
-<!-- AOS Animation Script -->
-<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-<script>
-  AOS.init({
-    duration: 1000,
-    once: true
-  });
-</script>
+    <section class="mission" data-aos="zoom-in">
+        <h3>Our Mission & Vision</h3>
+        <p>To provide reliable, sustainable, and cost-effective construction materials that help shape strong and lasting structures.</p>
+        <p>Empowering Builders & Architects with a consistent supply of premium materials, so projects move forward without delays.</p>
+        <p>Delivering Beyond Products by offering advice, technical knowledge, and dependable customer support.</p>
+        <p>Ensuring Accessibility so even small-scale projects can benefit from the same quality as large developments.</p>
+        <h3>Our Values</h3>
+        <ul>
+            <li>✔ Unmatched Quality – Only trusted, tested materials</li>
+            <li>✔ Timely Deliveries – We respect your construction timelines</li>
+            <li>✔ Transparent Pricing – No surprises, only trust</li>
+            <li>✔ Eco-Conscious – Supporting green building solutions</li>
+        </ul>
+    </section>
 
+    <!-- Footer -->
+    <footer class="footer">
+        <picture>
+            <source type="image/webp" media="(max-width:767px)" srcset="assets/images/Footer.webp, assets/images/Footer.jpg">
+            <source type="image/webp" media="(max-width:1440px)" srcset="assets/images/footer-bg.webp, assets/images/footer-bg.jpg">
+            <img src="" data-src="assets/images/footer-bg.jpg" loading="lazy" alt="rsconstruction" width="1920" height="367" class="lazy footer-bg-img">
+        </picture>
+        <div class="container">
+            <div class="footer-container">
+                <div class="mobile-logo-wrapper"><img src="" data-src="assets/images/rs-logos.webp" alt="rsconstructions-logo" loading="lazy" class="rsconstructions-logo-mobile lazy"></div>
+                <div class="footer-section"><a href="about.html" class="list-title">About</a></div>
+                <div class="footer-section"><a href="blogs.html" class="list-title">Blogs</a></div>
+                <div class="footer-section"><a href="materials.html" class="list-title">Material</a></div>
+                <div class="footer-section"><a href="services.html" class="list-title">Services</a></div>
+                <div class="footer-section"><a href="testimonial.html" class="list-title">Testimonials</a></div>
+                <div class="footer-section"><a href="contactus.html" class="list-title">Contact Us</a></div>
+                <div class="footer-section"><a href="#">Terms &amp; Conditions</a></div>
+                <div class="footer-section">&copy; 2025 RS Constructions. All rights reserved.</div>
+            </div>
+            <div class="footer-container logo-social-icons">
+                <div class="logo-wrapper"><img src="" data-src="assets/images/rs-logos.webp" alt="rs-construction logo" loading="lazy" class="rsconstruction-logo lazy" height="500" width="300"></div>
+                <div class="social-media-wrap">
+					<h4 class="media-wrap-head">Lets Connect</h4>
+					<div class="social-icons"><a
+							href="https://www.instagram.com/rsconstructions_95?igsh=MXQ0bHVjYTkxM21wag=="
+							target="_blank"><span class="icon icon-instagram"></span></a>
+							<!-- <a
+							href="http://www.linkedin.com/in/%20rs-constructions955" target="_blank"><span
+								class="icon icon-linkedin"></span></a> -->
+								<a href="https://x.com/RSConstructio95"
+							target="_blank"><span class="icon icon-twitter"></span></a><a
+							href="https://www.youtube.com/@RSConstructions-x2f" target="_blank"><span
+								class="icon icon-youtube"></span></a><a
+							href="https://www.facebook.com/profile.php?id=61572530949797" target="_blank"><span
+								class="icon icon-facebook"></span></a></div>
+				</div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="assets/js/vendor/jquery-3.7.1.min.js"></script>
+    <script defer src="assets/js/vendor/slick.js"></script>
+    <script defer src="assets/js/global.js"></script>
+    <script src="assets/js/popup.js"></script>
+    <script src="assets/js/about-us.js" defer></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({ duration: 1000, once: true });
+    </script>
 </body>
 </html>

@@ -4,7 +4,6 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Materials - RS Constructions</title>
-  <link rel="stylesheet" href="assets/css/style.css" />
   <style>
     body {
       font-family: Arial, sans-serif;
@@ -32,11 +31,12 @@
       border-radius: 8px;
       overflow: hidden;
       box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-      transition: 0.3s;
       cursor: pointer;
+      transition: 0.3s;
     }
     .material-card:hover {
       transform: translateY(-5px);
+      box-shadow: 0 8px 15px rgba(0,0,0,0.15);
     }
     .material-card img {
       width: 100%;
@@ -52,6 +52,57 @@
       margin: 0 15px 15px;
       color: #555;
     }
+
+    /* Modal Styles */
+    .modal {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.6);
+      justify-content: center;
+      align-items: center;
+      z-index: 1000;
+      padding: 20px;
+    }
+    .modal-content {
+      background: white;
+      max-width: 500px;
+      width: 100%;
+      border-radius: 10px;
+      padding: 30px 25px;
+      box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+      position: relative;
+      font-family: Arial, sans-serif;
+      text-align: center;
+    }
+    .modal-close {
+      position: absolute;
+      top: 15px;
+      right: 20px;
+      font-size: 30px;
+      color: #555;
+      cursor: pointer;
+      transition: color 0.3s;
+      font-weight: bold;
+    }
+    .modal-close:hover {
+      color: #ff5722;
+    }
+    .modal-content h3 {
+      margin-top: 0;
+      color: #ff5722;
+      font-size: 1.8rem;
+    }
+    .modal-content p {
+      line-height: 1.6;
+      margin: 15px 0;
+      color: #444;
+    }
+    .modal-content p strong {
+      color: #ff9800;
+    }
+
+    /* CTA Banner */
     .cta-banner {
       background: linear-gradient(135deg, #ff9800, #ff5722);
       color: white;
@@ -60,7 +111,7 @@
       border-radius: 10px;
       box-shadow: 0 5px 15px rgba(0,0,0,0.2);
       font-family: Arial, sans-serif;
-      margin: 20px 0;
+      margin: 20px 40px;
       animation: popUp 0.8s ease-in-out;
     }
     .cta-banner h3 {
@@ -94,58 +145,6 @@
       0% { transform: scale(0.9); opacity: 0; }
       100% { transform: scale(1); opacity: 1; }
     }
-
-    /* Modal Styles */
-    .modal {
-      display: none; 
-      position: fixed; 
-      z-index: 1000; 
-      left: 0;
-      top: 0;
-      width: 100%; 
-      height: 100%; 
-      overflow: auto;
-      background-color: rgba(0,0,0,0.6);
-      justify-content: center;
-      align-items: center;
-      padding: 20px;
-    }
-    .modal-content {
-      background: white;
-      border-radius: 12px;
-      max-width: 500px;
-      width: 100%;
-      padding: 30px;
-      position: relative;
-      box-shadow: 0 8px 20px rgba(0,0,0,0.25);
-      animation: fadeInScale 0.4s ease forwards;
-    }
-    @keyframes fadeInScale {
-      from {opacity: 0; transform: scale(0.8);}
-      to {opacity: 1; transform: scale(1);}
-    }
-    .modal-close {
-      position: absolute;
-      top: 15px;
-      right: 20px;
-      font-size: 24px;
-      font-weight: bold;
-      color: #ff5722;
-      cursor: pointer;
-      transition: color 0.3s ease;
-    }
-    .modal-close:hover {
-      color: #e64a19;
-    }
-    .modal-content h3 {
-      margin-top: 0;
-      color: #ff5722;
-    }
-    .modal-content p {
-      font-size: 1rem;
-      line-height: 1.6;
-      color: #444;
-    }
   </style>
 </head>
 <body>
@@ -156,90 +155,102 @@
 </header>
 
 <section class="materials-grid">
-  <div class="material-card" data-title="Premium Cement" data-desc="Premium cement designed for high-strength structural applications. Ideal for foundations, beams, and slabs, it ensures durable and reliable construction performance. Trusted by builders for consistent quality and long-lasting results. Our cement meets industry standards for excellence and sustainability.">
+
+  <div class="material-card" data-id="P001" data-title="Premium Cement" data-desc="Premium cement designed for high-strength structural applications. Ideal for foundations, beams, and slabs, it ensures durable and reliable construction performance. Trusted by builders for consistent quality and long-lasting results. Our cement meets industry standards for excellence and sustainability.">
     <img src="assets/images/construction-cement.jpg" alt="Cement" />
     <h3>Premium Cement</h3>
     <p>High-strength, durable cement ideal for all structural applications including foundations, beams, and slabs.</p>
   </div>
 
-  <div class="material-card" data-title="Rubble Stone" data-desc="Natural and eco-friendly rubble stones perfect for constructing strong, durable walls and landscaping projects. These stones offer excellent stability and aesthetic appeal to any build. Sourced responsibly to ensure sustainability. Widely used in both residential and commercial construction for enhanced structural integrity.">
+  <div class="material-card" data-id="P002" data-title="Rubble Stone" data-desc="Natural rubble stones sourced sustainably for eco-friendly construction. Perfect for building strong, durable walls and landscaping. These stones add both strength and aesthetic value to your projects. Widely used in foundations and exterior facades for their toughness and natural look.">
     <img src="assets/images/rubble-stone.png" alt="Rubble Stone" />
     <h3>Rubble Stone</h3>
     <p>Natural, eco-friendly rubble stones perfect for strong, long-lasting walls and landscaping projects.</p>
   </div>
 
-  <div class="material-card" data-title="Black River Sand" data-desc="Fine black river sand with excellent binding properties, ideal for plastering, concrete mixing, and masonry work. Ensures smooth finishes and strong construction joints. Naturally sourced and carefully processed to meet quality benchmarks. Enhances durability and workability of building mixes for superior results.">
+  <div class="material-card" data-id="P003" data-title="Black River Sand" data-desc="Finely graded black river sand ideal for plastering, masonry, and concrete mixes. Known for excellent binding properties and smooth finish. Carefully filtered to ensure purity and consistent grain size. Supports strong and durable construction projects. Trusted by professionals for quality results.">
     <img src="assets/images/river-sand.webp" alt="Black River Sand" />
     <h3>Black River Sand</h3>
     <p>Finely graded black sand suitable for plastering, concrete mix, and masonry work with excellent binding properties.</p>
   </div>
 
-  <div class="material-card" data-title="Brown River Sand" data-desc="Natural brown river sand ideal for construction and plastering, offering excellent compaction and ease of workability. This sand improves the strength of mortar and concrete mixes. Carefully sourced to maintain consistent quality and purity. Widely used for both residential and commercial projects.">
+  <div class="material-card" data-id="P004" data-title="Brown River Sand" data-desc="Natural brown river sand used extensively for plastering and construction applications. Offers great compaction and workability. Clean and well-graded for a smooth and strong finish. Environmentally sourced with quality assurance. Enhances the structural integrity of buildings.">
     <img src="assets/images/brown-river-sand-for-construction.png" alt="Brown River Sand" />
     <h3>Brown River Sand</h3>
     <p>Natural brown sand ideal for construction and plastering, offering good compaction and workability.</p>
   </div>
 
-  <div class="material-card" data-title="Washed Sand" data-desc="Clean washed sand, free from impurities and fine particles, perfect for high-quality plastering and concrete applications. It enhances the bonding and smooth finish of construction surfaces. Sourced through advanced washing techniques to meet industry standards. Ensures consistent mix quality for durable building results.">
+  <div class="material-card" data-id="P005" data-title="Washed Sand" data-desc="Clean and washed sand free from impurities, perfect for plastering and concrete applications. Provides a smooth surface finish and strong bonding in mixes. Sourced from quality-checked suppliers ensuring consistent quality. Ideal for high-standard construction projects requiring durability and precision.">
     <img src="assets/images/river-sand.webp" alt="Washed Sand" />
     <h3>Washed Sand</h3>
     <p>Clean, washed sand free from impurities, ideal for high-quality plastering and concrete applications.</p>
   </div>
 
-  <div class="material-card" data-title="Washed Concrete Sand" data-desc="Mechanically washed fine aggregates used as a sustainable substitute for river sand in concrete mixes. This sand improves the strength, durability, and workability of concrete structures. Carefully processed to ensure uniform grading and cleanliness. Compliant with construction industry standards for premium quality.">
+  <div class="material-card" data-id="P006" data-title="Washed Concrete Sand" data-desc="Mechanically washed fine aggregates that serve as a perfect substitute for natural river sand in concrete mixes. Enhances durability and workability of concrete. Ensures consistent grain size and cleanliness for optimal construction results. GST: 5%. Trusted by contractors for quality assurance.">
     <img src="assets/images/concrete-sand.jpg" alt="Washed Concrete Sand" />
     <h3>Washed Concrete Sand</h3>
     <p>Mechanically washed fine aggregates, perfect substitute for river sand in concrete mixes for enhanced durability.</p>
     <p><strong>GST:</strong> 5%</p>
   </div>
 
-  <div class="material-card" data-title="Debris / Soil Filling" data-desc="High-quality debris and soil mix perfect for land leveling, backfilling, and site preparation tasks. Provides a stable foundation for construction projects by improving ground compaction. Sourced from reliable suppliers ensuring consistency and eco-friendly practices. Supports durability and longevity of building structures.">
+  <div class="material-card" data-id="P007" data-title="Debris / Soil Filling" data-desc="High-quality debris and soil mix used for land leveling, backfilling, and site preparation. Provides stable foundations and enhances soil compaction. Ideal for preparing construction sites and landscaping projects. Ensures durability and structural integrity. GST: 5%.">
     <img src="assets/images/broken-bricks-soil-filling.png" alt="Debris and Soil Filling" />
     <h3>Debris / Soil Filling</h3>
     <p>High-quality debris and soil mix used for land leveling, backfilling, and site preparation to ensure stable foundations.</p>
     <p><strong>GST:</strong> 5%</p>
   </div>
 
-  <div class="material-card" data-title="VSI Crush Sand" data-desc="Manufactured crushed sand created using Vertical Shaft Impactor (VSI) technology, serving as a sustainable alternative to natural sand. Ideal for concrete and plastering applications, it improves strength and durability. Sourced with environmental responsibility, meeting modern construction needs. Offers consistent particle size distribution and quality.">
-    <img src="assets/images/crush-sand.webp" alt="Crush Sand" />
+  <div class="material-card" data-id="P008" data-title="VSI Crush Sand" data-desc="Manufactured crushed sand produced as a sustainable alternative to natural sand in concrete and plastering. Ensures superior binding and strength. Supports eco-friendly construction practices. Consistent quality and size for excellent mix performance. GST: 5%.">
+    <img src="assets/images/crush-sand.webp" alt="VSI Crush Sand" />
     <h3>VSI Crush Sand</h3>
     <p>Manufactured crushed sand used as a sustainable alternative to natural sand in concrete and plastering.</p>
     <p><strong>GST:</strong> 5%</p>
   </div>
 
-  <div class="material-card" data-title="VSI Aggregate 10mm-60mm" data-desc="Coarse crushed stones sized 10mm to 60mm used primarily as railway ballast and concrete aggregate. Provides excellent strength and durability to construction projects. Processed for uniformity and high performance. Widely used in infrastructure, railways, and heavy construction applications.">
+  <div class="material-card" data-id="P009" data-title="VSI Aggregate 10mm-60mm" data-desc="Coarse crushed stones ranging from 10mm to 60mm in size, commonly used as railway ballast and in concrete mixes. Provides strength and durability to construction projects. Sourced with strict quality controls. GST: 5%.">
     <img src="assets/images/aggregate.webp" alt="VSI Aggregate 10mm" />
     <h3>VSI Aggregate 10mm-60mm</h3>
     <p>Coarse crushed stones sized 10mm-60mm, Railway ballast.</p>
     <p><strong>GST:</strong> 5%</p>
   </div>
 
-  <div class="material-card" data-title="Bricks 4 inch" data-desc="Standard 4-inch clay bricks offering excellent strength and reliability for wall construction. Manufactured using high-quality raw materials to ensure durability. Widely used in residential and commercial buildings. These bricks offer thermal insulation and sound resistance benefits. Ideal for both load-bearing and partition walls.">
+  <div class="material-card" data-id="P010" data-title="Bricks 4 Inch" data-desc="Standard 4-inch clay bricks known for strength and reliability in wall construction. Provides excellent load-bearing capacity and durability. Manufactured under strict quality standards for uniform size and strength. GST: 12%.">
     <img src="assets/images/bricks.webp" alt="Bricks 4 inch" />
     <h3>Bricks 4"</h3>
     <p>Standard 4-inch clay bricks known for their strength and reliability in wall construction.</p>
     <p><strong>GST:</strong> 12%</p>
   </div>
 
-  <div class="material-card" data-title="Bricks 6 inch" data-desc="Heavy-duty 6-inch clay bricks designed to withstand high load-bearing applications. Offers superior strength for durable walls and structures. Manufactured under strict quality control ensuring consistency. Provides excellent insulation and long service life. Ideal choice for foundational and external walls.">
+  <div class="material-card" data-id="P011" data-title="Bricks 6 Inch" data-desc="Heavy-duty 6-inch clay bricks designed for durable, load-bearing walls. Ideal for structures requiring enhanced strength and longevity. Made with high-quality clay and fired for maximum toughness. GST: 12%.">
     <img src="assets/images/brick.webp" alt="Bricks 6 inch" />
     <h3>Bricks 6"</h3>
     <p>Heavy-duty 6-inch clay bricks designed for durable and load-bearing walls.</p>
     <p><strong>GST:</strong> 12%</p>
   </div>
 
-  <div class="material-card" data-title="AAC Blocks / Fly Ash Bricks / Blocks" data-desc="Lightweight and energy-efficient AAC blocks and fly ash bricks designed for modern, eco-friendly construction. Offers thermal insulation and reduces construction time. Manufactured using sustainable fly ash, contributing to environmental protection. Provides excellent fire resistance and soundproofing. Widely preferred in green building projects.">
+  <div class="material-card" data-id="P012" data-title="AAC Blocks / Fly Ash Bricks" data-desc="Lightweight, energy-efficient AAC blocks and fly ash bricks that promote eco-friendly construction. Excellent insulation properties, reducing energy costs. Provides strong structural support with easy handling. Popular choice for modern sustainable building projects.">
     <img src="assets/images/aac-blocks.png" alt="AAC Blocks" />
     <h3>AAC Blocks / Fly Ash Bricks / Blocks</h3>
     <p>Lightweight, energy-efficient AAC blocks and fly ash bricks for modern, eco-friendly construction.</p>
   </div>
 
-  <div class="material-card" data-title="Need More Materials?" data-desc="Looking for construction materials not listed here? We can source and supply any building materials you need. Contact us with your specific requirements and get customized solutions. Trusted for prompt service and competitive pricing. Your one-stop shop for all premium construction materials.">
+  <div class="material-card" data-id="P013" data-title="Need More Materials?" data-desc="Looking for materials not listed here? We can source and supply any construction material you need. Just contact us and we’ll deliver quality products tailored to your project requirements. Your one-stop solution for all building material needs.">
     <img src="assets/images/need-more-materials.png" alt="More Materials" />
     <h3>Need More Materials?</h3>
     <p>Looking for materials not listed here? We can source and supply any construction material you need — just ask us!</p>
   </div>
+
 </section>
+
+<!-- Modal -->
+<div class="modal" id="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle" aria-describedby="modalDesc">
+  <div class="modal-content">
+    <span class="modal-close" id="modalClose" aria-label="Close modal">&times;</span>
+    <h3 id="modalTitle">Title Here</h3>
+    <p><strong>Product ID:</strong> <span id="modalID">P000</span></p>
+    <p id="modalDesc">Description here...</p>
+  </div>
+</div>
 
 <div class="cta-banner">
   <h3>🏗️ Need Building Materials Today?</h3>
@@ -248,48 +259,80 @@
   <a href="mailto:rsenterprises95m@gmail.com" class="cta-btn secondary">✉️ Email Your Order : rsenterprises95m@gmail.com</a>
 </div>
 
-<!-- Modal -->
-<div id="productModal" class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle" aria-describedby="modalDesc">
-  <div class="modal-content">
-    <span class="modal-close" aria-label="Close">&times;</span>
-    <h3 id="modalTitle"></h3>
-    <p id="modalDesc"></p>
-  </div>
-</div>
-
 <script>
-  const modal = document.getElementById('productModal');
+  const modal = document.getElementById('modal');
   const modalTitle = document.getElementById('modalTitle');
+  const modalID = document.getElementById('modalID');
   const modalDesc = document.getElementById('modalDesc');
-  const closeBtn = document.querySelector('.modal-close');
+  const modalClose = document.getElementById('modalClose');
 
+  // Open modal with product details and update URL
+  function openModal(id, title, desc, pushState = true) {
+    modalTitle.textContent = title;
+    modalID.textContent = id;
+    modalDesc.textContent = desc;
+    modal.style.display = 'flex';
+    document.body.style.overflow = 'hidden';
+    if (pushState) {
+      const urlTitle = encodeURIComponent(title);
+      const url = `?id=${id}&name=${urlTitle}`;
+      history.pushState({id, title}, '', url);
+    }
+  }
+
+  // Close modal and reset URL
+  function closeModal() {
+    modal.style.display = 'none';
+    document.body.style.overflow = 'auto';
+    history.pushState({}, '', window.location.pathname);
+  }
+
+  // Add click event to product cards
   document.querySelectorAll('.material-card').forEach(card => {
     card.addEventListener('click', () => {
-      modalTitle.textContent = card.dataset.title;
-      modalDesc.textContent = card.dataset.desc;
-      modal.style.display = 'flex';
-      document.body.style.overflow = 'hidden'; // prevent background scroll
+      openModal(card.dataset.id, card.dataset.title, card.dataset.desc);
     });
   });
 
-  closeBtn.addEventListener('click', () => {
-    modal.style.display = 'none';
-    document.body.style.overflow = 'auto';
-  });
+  // Close modal on clicking close button
+  modalClose.addEventListener('click', closeModal);
 
-  // Close modal on outside click
-  window.addEventListener('click', (e) => {
-    if(e.target === modal){
-      modal.style.display = 'none';
-      document.body.style.overflow = 'auto';
+  // Close modal on clicking outside content area
+  window.addEventListener('click', e => {
+    if (e.target === modal) {
+      closeModal();
     }
   });
 
-  // Close modal on ESC key
-  window.addEventListener('keydown', (e) => {
-    if(e.key === 'Escape' && modal.style.display === 'flex'){
-      modal.style.display = 'none';
-      document.body.style.overflow = 'auto';
+  // Close modal on pressing ESC key
+  window.addEventListener('keydown', e => {
+    if (e.key === 'Escape' && modal.style.display === 'flex') {
+      closeModal();
+    }
+  });
+
+  // On page load, check URL params for product info, open modal if found
+  window.addEventListener('DOMContentLoaded', () => {
+    const params = new URLSearchParams(window.location.search);
+    const id = params.get('id');
+    const name = params.get('name');
+    if (id && name) {
+      const card = [...document.querySelectorAll('.material-card')].find(c => c.dataset.id === id);
+      if (card) {
+        openModal(card.dataset.id, card.dataset.title, card.dataset.desc, false);
+      }
+    }
+  });
+
+  // Handle back/forward browser buttons
+  window.addEventListener('popstate', (event) => {
+    if (event.state && event.state.id && event.state.title) {
+      const card = [...document.querySelectorAll('.material-card')].find(c => c.dataset.id === event.state.id);
+      if (card) {
+        openModal(card.dataset.id, card.dataset.title, card.dataset.desc, false);
+      }
+    } else {
+      closeModal();
     }
   });
 </script>

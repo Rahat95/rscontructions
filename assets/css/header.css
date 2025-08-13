@@ -1,1 +1,495 @@
-.post-login-user .username,header .nav-link{white-space:nowrap;letter-spacing:-.36px;font-weight:700;line-height:normal}header{position:fixed;z-index:101;width:100%}header .header-wrapp{display:flex;justify-content:space-between;max-width:90rem;width:100%;margin:0 auto}header .header-bottom{background-image:url(../../assets/images/nav-bg.jpg);background-repeat:no-repeat;background-size:cover}header .hdr-logo{display:flex;align-items:center;justify-content:space-between;z-index:3;width:100%}header .hdr-logo .humburger-menu{display:none;background:#f6f7f8;width:100%;height:100vh;position:absolute;left:0;top:0;padding:1.5rem 1rem 0;overflow:hidden;overflow-y:auto}header .hdr-logo .humburger-menu .menus{margin-bottom:6rem}header .hdr-logo .humburger-menu .menus .menu{display:flex;align-items:center;border:.0625rem solid #e2e2e2;border-radius:.25rem;margin-bottom:.75rem;background:#fff}header .hdr-logo .humburger-menu .menus .menu a{width:100%;display:inline-block;padding:1.2813rem 1.25rem}header .hdr-logo .humburger-menu .menus .menu .menu-item{display:flex;align-items:center;justify-content:space-between}header .hdr-logo .humburger-menu .menus .menu .menu-item .sm-img{margin-right:.5rem}header .hdr-logo .humburger-menu .menus .menu .menu-item .menu-wrap,header .logout-btn .logout-content{display:flex;align-items:center}header .hdr-logo .humburger-menu .menus .menu .menu-item .icon{font-size:.75rem}header .hdr-logo .humburger-menu .menus .menu .menu-item .icon.active{transform:rotate(90deg)}header .hdr-logo .humburger-menu .bottom-navlink-wrap{width:100%;display:flex;justify-content:center}header .hdr-logo .humburger-menu .bottom-navlink-wrap .icon-link{margin-right:.75rem}header .hdr-logo .humburger-menu .bottom-navlink-wrap .icon-link:last-child{margin-right:0}header .hdr-logo .humburger-menu .bottom-navlink-wrap .icon-link .icon-content{text-align:center}header .hdr-logo .humburger-menu .bottom-navlink-wrap .icon-link .icon-content .icon{padding:1.5rem 2.125rem;background:linear-gradient(180deg,#010d38 0,#09318c 100%);border-radius:.3284rem;margin-bottom:.5rem}header .hdr-logo .humburger-menu .bottom-navlink-wrap .icon-link .icon-content .text{font-family:"Frutiger LT Pro 45";font-size:.875rem;font-weight:700}header .hdr-logo .humburger-menu .bottom-nav-link{margin-top:auto}header .nav-list{display:flex;align-items:center;position:relative}header .nav-list .search{display:none;padding:0 .875rem}header .nav-link{font-size:1.125rem;font-family:"Frutiger LT Pro 55 Roman normal";position:relative}header .dropdown-menu{background:#fff;opacity:0;visibility:hidden;position:absolute;top:4.625rem;transition:opacity .3s,visibility .3s;z-index:9;border-radius:0 0 .5rem .5rem;display:inline-block;left:auto;width:14.25rem;right:0;padding:1rem 1rem 1.25rem;color:#262626}header .dropdown-menu.active{visibility:visible;opacity:1}header .dropdown-menu .name-label{font-size:1.25rem;line-height:normal;letter-spacing:-.4px;font-family:"Frutiger LT Pro 57 Condensed 800";padding-bottom:1.5rem}header .logout-btn{width:100%;display:flex;justify-content:space-between}header .logout-btn .logout-img{padding-right:.625rem}header .logout-btn .icon-footerarrow{font-size:.875rem}header .logout-btn .logout-content .btn-text{color:#ed1c24;font-size:.875rem;line-height:normal;letter-spacing:-.28px}header .header-bottom{padding:13px 0;display:flex;justify-content:space-between;align-items:center;position:relative;z-index:2}header .header-bottom .nav-left{display:flex;align-items:center;padding-left:0}header .header-bottom .logo{margin-right:1.5rem}header .header-bottom .nav-primary{display:flex;align-items:center;padding-right:0}header .header-bottom .nav-primary .nav-item{text-decoration:none;color:#fff;font-family:"Frutiger LT Pro 45";font-size:1.125rem;letter-spacing:-.0225rem;margin-right:2.25rem;transition:.3s}header .header-bottom .nav-primary .nav-item.active .nav-link:before{position:absolute;content:"";background:#ffcb05;width:80%;height:.25rem;left:50%;bottom:1.1875rem;transform:translateX(-50%)}header .header-bottom .nav-primary .nav-item:hover{color:#ffcb05}header #hamburger{width:1.25rem;height:1rem;background-color:rgba(0,0,0,0);border:0;transform:rotate(0);transition:.5s ease-in-out;cursor:pointer;display:none;z-index:999;position:relative;top:0;color:#fff;margin-right:1.25rem}header #hamburger.active span{width:65%;border-radius:0}header #hamburger.active span:first-child{top:7px;transform:rotate(-45deg)}header #hamburger.active span:nth-child(2){top:7px;transform:rotate(45deg);display:none}header #hamburger.active span:nth-child(3){top:7px;transform:rotate(45deg)}header #hamburger span{display:block;position:absolute;height:.125rem;width:100%;background:#fff;opacity:1;left:0;-ms-transform:rotate(0);transform:rotate(0);transition:.25s ease-in-out;border-radius:.625rem}header #hamburger span:first-child{top:0;transform-origin:left center}header #hamburger span:nth-child(2){top:.4375rem;transform-origin:left center}header #hamburger span:nth-child(3){top:.8375rem;transform-origin:left center}.post-login-user{display:flex;justify-content:space-between;align-items:center;position:relative}.post-login-user .username{color:#ffcb05;font-family:"Frutiger LT Pro 45";font-size:1.125rem;font-style:normal;display:flex;align-items:center;padding:0}.post-login-user .logged-user{background:#ffcb05;color:#000;font-family:"Frutiger LT Pro 55 Roman normal";width:3rem;height:3rem;display:flex;align-items:center;justify-content:center;font-size:1rem;font-style:normal;font-weight:700;line-height:normal;margin-left:1rem;letter-spacing:-.32px;text-transform:uppercase;cursor:pointer;-webkit-border-radius:6.25rem;-moz-border-radius:6.25rem;border-radius:6.25rem}.post-login-user .logged-user:hover{background:#e5bb1b}.mobilewatchlive{display:none}.headerbuttongroup{display:flex}#registration-closed-popup{padding:2.0625rem 0 0;text-align:center}#registration-closed-popup .popup-img{margin-bottom:1.5rem}#registration-closed-popup.popup-container picture img{position:absolute;object-fit:cover;width:100%;background-size:100%;z-index:-1;left:0;right:0;top:0;overflow:hidden}#registration-closed-popup .heading2{margin-bottom:1.5rem;color:#fff}#registration-closed-popup .text-content .sub-text{margin-bottom:3.125rem;color:#fff;text-align:center;font-family:"Frutiger LT Pro 55 Roman normal";font-size:1rem;font-style:normal;font-weight:400;line-height:150%;letter-spacing:-.01rem}#registration-closed-popup .text-content{width:100%;border-radius:.25rem;border:.0625rem solid #00f9ef;padding-top:2.1875rem}#registration-closed-popup .text-content .go-home-btn{padding:.75rem 0;width:100%;background:#f9c623;cursor:pointer}#registration-closed-popup .text-content .go-home-btn a{display:inline-block;color:#0a0a0a;font-family:"Frutiger LT Pro 55 Roman";font-size:1rem;font-style:normal;font-weight:800;line-height:1rem;text-decoration-line:underline}@media only screen and (max-width:1366px){header .nav-link{padding:1.6875rem .75rem}}@media only screen and (max-width:1280px){header .nav-list{position:unset}header .header-bottom .logo{margin-right:0}}@media only screen and (max-width:1199px){header .header-bottom .nav-primary .nav-item{margin-right:0;font-size:1.025rem}header .header-bottom .nav-primary .pearl-header .nav-item{margin-right:0}.headerbuttongroup .login-btn{font-size:1rem;width:7rem}}@media only screen and (max-width:1024px){header .hdr-logo .humburger-menu.hamburg-pearl-header.show{display:block;top:6.275rem;flex-direction:column}header .hdr-logo .humburger-menu.show{display:block;top:6.375rem}header .nav-list{display:none}header .nav-link{padding:1.6875rem .625rem}header .header-bottom .nav-left{width:95%;justify-content:space-between;padding-left:0}header #hamburger{display:inline-block}}@media only screen and (max-width:991px){header .hdr-logo .humburger-menu.hamburg-pearl-header.show{display:block;top:2.975rem;flex-direction:column}header .hdr-logo .logo-wrapp{margin:0}header .hdr-logo{z-index:0}header .dropdown-menu{top:42px}header .header-bottom{padding:2px 0;border:none}header .header-bottom .logo{width:83px;height:auto}header .header-bottom .nav-primary{padding-right:0}.post-login-user .username{font-size:16px}.post-login-user .logged-user{width:2.25rem;height:2.25rem;margin-left:.875rem}.mobilewatchlive{display:block;margin-right:.5rem}}@media only screen and (max-width:767px){header .header-bottom{background-image:url(../../assets/images/Nav-mob-bg.jpg)}header .hdr-logo .humburger-menu.show{display:block;top:97px;flex-direction:column}header .dropdown-menu{top:40px}header .dropdown-menu .name-label{font-size:1rem;padding-bottom:.75rem}.post-login-user .username{font-size:.875rem}.post-login-user .logged-user{width:2rem;height:2rem}}@media only screen and (max-width:575px){.headerbuttongroup .login-btn{padding:.4688rem .8rem}}
+.post-login-user .username,
+header .nav-link {
+  white-space: nowrap;
+  letter-spacing: -0.36px;
+  font-weight: 700;
+  line-height: normal;
+}
+header {
+  position: fixed;
+  z-index: 101;
+  width: 100%;
+}
+header .header-wrapp {
+  display: flex;
+  justify-content: space-between;
+  max-width: 90rem;
+  width: 100%;
+  margin: 0 auto;
+}
+header .header-bottom {
+  background-image: url(../../assets/images/nav-bg.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+header .hdr-logo {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  z-index: 3;
+  width: 100%;
+}
+header .hdr-logo .humburger-menu {
+  display: none;
+  background: #f6f7f8;
+  width: 100%;
+  height: 100vh;
+  position: absolute;
+  left: 0;
+  top: 0;
+  padding: 1.5rem 1rem 0;
+  overflow: hidden;
+  overflow-y: auto;
+}
+header .hdr-logo .humburger-menu .menus {
+  margin-bottom: 6rem;
+}
+header .hdr-logo .humburger-menu .menus .menu {
+  display: flex;
+  align-items: center;
+  border: 0.0625rem solid #e2e2e2;
+  border-radius: 0.25rem;
+  margin-bottom: 0.75rem;
+  background: #fff;
+}
+header .hdr-logo .humburger-menu .menus .menu a {
+  width: 100%;
+  display: inline-block;
+  padding: 1.2813rem 1.25rem;
+}
+header .hdr-logo .humburger-menu .menus .menu .menu-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+header .hdr-logo .humburger-menu .menus .menu .menu-item .sm-img {
+  margin-right: 0.5rem;
+}
+header .hdr-logo .humburger-menu .menus .menu .menu-item .menu-wrap,
+header .logout-btn .logout-content {
+  display: flex;
+  align-items: center;
+}
+header .hdr-logo .humburger-menu .menus .menu .menu-item .icon {
+  font-size: 0.75rem;
+}
+header .hdr-logo .humburger-menu .menus .menu .menu-item .icon.active {
+  transform: rotate(90deg);
+}
+header .hdr-logo .humburger-menu .bottom-navlink-wrap {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+header .hdr-logo .humburger-menu .bottom-navlink-wrap .icon-link {
+  margin-right: 0.75rem;
+}
+header .hdr-logo .humburger-menu .bottom-navlink-wrap .icon-link:last-child {
+  margin-right: 0;
+}
+header .hdr-logo .humburger-menu .bottom-navlink-wrap .icon-link .icon-content {
+  text-align: center;
+}
+header
+  .hdr-logo
+  .humburger-menu
+  .bottom-navlink-wrap
+  .icon-link
+  .icon-content
+  .icon {
+  padding: 1.5rem 2.125rem;
+  background: linear-gradient(180deg, #010d38 0, #09318c 100%);
+  border-radius: 0.3284rem;
+  margin-bottom: 0.5rem;
+}
+header
+  .hdr-logo
+  .humburger-menu
+  .bottom-navlink-wrap
+  .icon-link
+  .icon-content
+  .text {
+  font-family: "Frutiger LT Pro 45";
+  font-size: 0.875rem;
+  font-weight: 700;
+}
+header .hdr-logo .humburger-menu .bottom-nav-link {
+  margin-top: auto;
+}
+header .nav-list {
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+header .nav-list .search {
+  display: none;
+  padding: 0 0.875rem;
+}
+header .nav-link {
+  font-size: 1.125rem;
+  font-family: "Frutiger LT Pro 55 Roman normal";
+  position: relative;
+}
+header .dropdown-menu {
+  background: #fff;
+  opacity: 0;
+  visibility: hidden;
+  position: absolute;
+  top: 4.625rem;
+  transition: opacity 0.3s, visibility 0.3s;
+  z-index: 9;
+  border-radius: 0 0 0.5rem 0.5rem;
+  display: inline-block;
+  left: auto;
+  width: 14.25rem;
+  right: 0;
+  padding: 1rem 1rem 1.25rem;
+  color: #262626;
+}
+header .dropdown-menu.active {
+  visibility: visible;
+  opacity: 1;
+}
+header .dropdown-menu .name-label {
+  font-size: 1.25rem;
+  line-height: normal;
+  letter-spacing: -0.4px;
+  font-family: "Frutiger LT Pro 57 Condensed 800";
+  padding-bottom: 1.5rem;
+}
+header .logout-btn {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+header .logout-btn .logout-img {
+  padding-right: 0.625rem;
+}
+header .logout-btn .icon-footerarrow {
+  font-size: 0.875rem;
+}
+header .logout-btn .logout-content .btn-text {
+  color: #ed1c24;
+  font-size: 0.875rem;
+  line-height: normal;
+  letter-spacing: -0.28px;
+}
+header .header-bottom {
+  padding: 13px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  z-index: 2;
+}
+header .header-bottom .nav-left {
+  display: flex;
+  align-items: center;
+  padding-left: 0;
+}
+header .header-bottom .logo {
+  margin-right: 1.5rem;
+}
+header .header-bottom .nav-primary {
+  display: flex;
+  align-items: center;
+  padding-right: 0;
+}
+header .header-bottom .nav-primary .nav-item {
+  text-decoration: none;
+  color: #fff;
+  font-family: "Frutiger LT Pro 45";
+  font-size: 1.125rem;
+  letter-spacing: -0.0225rem;
+  margin-right: 2.25rem;
+  transition: 0.3s;
+}
+header .header-bottom .nav-primary .nav-item.active .nav-link:before {
+  position: absolute;
+  content: "";
+  background: #ffcb05;
+  width: 80%;
+  height: 0.25rem;
+  left: 50%;
+  bottom: 1.1875rem;
+  transform: translateX(-50%);
+}
+header .header-bottom .nav-primary .nav-item:hover {
+  color: #ffcb05;
+}
+header #hamburger {
+  width: 1.25rem;
+  height: 1rem;
+  background-color: rgba(0, 0, 0, 0);
+  border: 0;
+  transform: rotate(0);
+  transition: 0.5s ease-in-out;
+  cursor: pointer;
+  display: none;
+  z-index: 999;
+  position: relative;
+  top: 0;
+  color: #fff;
+  margin-right: 1.25rem;
+}
+header #hamburger.active span {
+  width: 65%;
+  border-radius: 0;
+}
+header #hamburger.active span:first-child {
+  top: 7px;
+  transform: rotate(-45deg);
+}
+header #hamburger.active span:nth-child(2) {
+  top: 7px;
+  transform: rotate(45deg);
+  display: none;
+}
+header #hamburger.active span:nth-child(3) {
+  top: 7px;
+  transform: rotate(45deg);
+}
+header #hamburger span {
+  display: block;
+  position: absolute;
+  height: 0.125rem;
+  width: 100%;
+  background: #fff;
+  opacity: 1;
+  left: 0;
+  -ms-transform: rotate(0);
+  transform: rotate(0);
+  transition: 0.25s ease-in-out;
+  border-radius: 0.625rem;
+}
+header #hamburger span:first-child {
+  top: 0;
+  transform-origin: left center;
+}
+header #hamburger span:nth-child(2) {
+  top: 0.4375rem;
+  transform-origin: left center;
+}
+header #hamburger span:nth-child(3) {
+  top: 0.8375rem;
+  transform-origin: left center;
+}
+.post-login-user {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+}
+.post-login-user .username {
+  color: #ffcb05;
+  font-family: "Frutiger LT Pro 45";
+  font-size: 1.125rem;
+  font-style: normal;
+  display: flex;
+  align-items: center;
+  padding: 0;
+}
+.post-login-user .logged-user {
+  background: #ffcb05;
+  color: #000;
+  font-family: "Frutiger LT Pro 55 Roman normal";
+  width: 3rem;
+  height: 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  margin-left: 1rem;
+  letter-spacing: -0.32px;
+  text-transform: uppercase;
+  cursor: pointer;
+  -webkit-border-radius: 6.25rem;
+  -moz-border-radius: 6.25rem;
+  border-radius: 6.25rem;
+}
+.post-login-user .logged-user:hover {
+  background: #e5bb1b;
+}
+.mobilewatchlive {
+  display: none;
+}
+.headerbuttongroup {
+  display: flex;
+}
+#registration-closed-popup {
+  padding: 2.0625rem 0 0;
+  text-align: center;
+}
+#registration-closed-popup .popup-img {
+  margin-bottom: 1.5rem;
+}
+#registration-closed-popup.popup-container picture img {
+  position: absolute;
+  object-fit: cover;
+  width: 100%;
+  background-size: 100%;
+  z-index: -1;
+  left: 0;
+  right: 0;
+  top: 0;
+  overflow: hidden;
+}
+#registration-closed-popup .heading2 {
+  margin-bottom: 1.5rem;
+  color: #fff;
+}
+#registration-closed-popup .text-content .sub-text {
+  margin-bottom: 3.125rem;
+  color: #fff;
+  text-align: center;
+  font-family: "Frutiger LT Pro 55 Roman normal";
+  font-size: 1rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 150%;
+  letter-spacing: -0.01rem;
+}
+#registration-closed-popup .text-content {
+  width: 100%;
+  border-radius: 0.25rem;
+  border: 0.0625rem solid #00f9ef;
+  padding-top: 2.1875rem;
+}
+#registration-closed-popup .text-content .go-home-btn {
+  padding: 0.75rem 0;
+  width: 100%;
+  background: #f9c623;
+  cursor: pointer;
+}
+#registration-closed-popup .text-content .go-home-btn a {
+  display: inline-block;
+  color: #0a0a0a;
+  font-family: "Frutiger LT Pro 55 Roman";
+  font-size: 1rem;
+  font-style: normal;
+  font-weight: 800;
+  line-height: 1rem;
+  text-decoration-line: underline;
+}
+@media only screen and (max-width: 1366px) {
+  header .nav-link {
+    padding: 1.6875rem 0.75rem;
+  }
+}
+@media only screen and (max-width: 1280px) {
+  header .nav-list {
+    position: unset;
+  }
+  header .header-bottom .logo {
+    margin-right: 0;
+  }
+}
+@media only screen and (max-width: 1199px) {
+  header .header-bottom .nav-primary .nav-item {
+    margin-right: 0;
+    font-size: 1.025rem;
+  }
+  header .header-bottom .nav-primary .pearl-header .nav-item {
+    margin-right: 0;
+  }
+  .headerbuttongroup .login-btn {
+    font-size: 1rem;
+    width: 7rem;
+  }
+}
+@media only screen and (max-width: 1024px) {
+  header .hdr-logo .humburger-menu.hamburg-pearl-header.show {
+    display: block;
+    top: 6.275rem;
+    flex-direction: column;
+  }
+  header .hdr-logo .humburger-menu.show {
+    display: block;
+    top: 6.375rem;
+  }
+  header .nav-list {
+    display: none;
+  }
+  header .nav-link {
+    padding: 1.6875rem 0.625rem;
+  }
+  header .header-bottom .nav-left {
+    width: 95%;
+    justify-content: space-between;
+    padding-left: 0;
+  }
+  header #hamburger {
+    display: inline-block;
+  }
+}
+@media only screen and (max-width: 991px) {
+  header .hdr-logo .humburger-menu.hamburg-pearl-header.show {
+    display: block;
+    top: 2.975rem;
+    flex-direction: column;
+  }
+  header .hdr-logo .logo-wrapp {
+    margin: 0;
+  }
+  header .hdr-logo {
+    z-index: 0;
+  }
+  header .dropdown-menu {
+    top: 42px;
+  }
+  header .header-bottom {
+    padding: 2px 0;
+    border: none;
+  }
+  header .header-bottom .logo {
+    width: 83px;
+    height: auto;
+  }
+  header .header-bottom .nav-primary {
+    padding-right: 0;
+  }
+  .post-login-user .username {
+    font-size: 16px;
+  }
+  .post-login-user .logged-user {
+    width: 2.25rem;
+    height: 2.25rem;
+    margin-left: 0.875rem;
+  }
+  .mobilewatchlive {
+    display: block;
+    margin-right: 0.5rem;
+  }
+}
+@media only screen and (max-width: 767px) {
+  header .header-bottom {
+    background-image: url(../../assets/images/Nav-mob-bg.jpg);
+  }
+  header .hdr-logo .humburger-menu.show {
+    display: block;
+    top: 64px;
+    flex-direction: column;
+  }
+  header .dropdown-menu {
+    top: 40px;
+  }
+  header .dropdown-menu .name-label {
+    font-size: 1rem;
+    padding-bottom: 0.75rem;
+  }
+  .post-login-user .username {
+    font-size: 0.875rem;
+  }
+  .post-login-user .logged-user {
+    width: 2rem;
+    height: 2rem;
+  }
+}
+@media only screen and (max-width: 575px) {
+  .headerbuttongroup .login-btn {
+    padding: 0.4688rem 0.8rem;
+  }
+}

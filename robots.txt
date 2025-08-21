@@ -1,3 +1,16 @@
+# robots.txt for R.S.Constructions
 User-agent: *
-Allow: /
+
+# Allow main website content
+Allow: /$
+
+# Block unnecessary folders (CSS, JS, temp, admin)
+Disallow: /assets/css/
+Disallow: /assets/fonts/
+Disallow: /assets/js/
+
+# Allow images (important for SEO & Google Images)
+Allow: /assets/images/
+
 Sitemap: https://rsconstructions.vercel.app/sitemap.xml
+

@@ -368,8 +368,17 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <script>
         AOS.init({ duration: 1000, once: true });
     </script>
+	<script>
+        document.querySelectorAll(".faq-question").forEach(button => {
+            button.addEventListener("click", () => {
+                const faqItem = button.parentElement;
+                faqItem.classList.toggle("active");
+            });
+        });
+    </script>
 </body>
 </html>
+
 
 
 

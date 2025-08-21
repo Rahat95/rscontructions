@@ -136,6 +136,56 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                 gap: 10px;
             }
         }
+		 .faq-section {
+            max-width: 1000px;
+            margin: 80px auto;
+            padding: 40px 20px;
+            background: #fff;
+            border-radius: 15px;
+            box-shadow: 0 5px 25px rgba(0,0,0,0.08);
+        }
+        .faq-title {
+            text-align: center;
+            font-size: 2rem;
+            color: #ff9800;
+            margin-bottom: 30px;
+        }
+        .faq-container {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+        .faq-item {
+            border: 1px solid #eee;
+            border-radius: 10px;
+            overflow: hidden;
+            background: #fafafa;
+            transition: all 0.3s ease;
+        }
+        .faq-item:hover {
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+        }
+        .faq-question {
+            width: 100%;
+            padding: 15px 20px;
+            background: none;
+            border: none;
+            text-align: left;
+            font-size: 1rem;
+            font-weight: bold;
+            cursor: pointer;
+            color: #333;
+        }
+        .faq-answer {
+            display: none;
+            padding: 0 20px 15px;
+            font-size: 0.95rem;
+            line-height: 1.6;
+            color: #555;
+        }
+        .faq-item.active .faq-answer {
+            display: block;
+        }
     </style>
 </head>
 <body>
@@ -226,6 +276,47 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             <li>✔ Eco-Conscious – Supporting green building solutions</li>
         </ul>
     </section>
+	<section class="faq-section" data-aos="fade-up">
+        <h2 class="faq-title">Frequently Asked Questions</h2>
+        <div class="faq-container">
+
+            <div class="faq-item">
+                <button class="faq-question">What building materials do you supply?</button>
+                <div class="faq-answer">
+                    <p>We supply premium quality cement, sand, aggregates, crush sand, river sand, bricks, and other essential building materials across Mumbai, Mira Road, Thane & Vasai-Virar</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question">Do you deliver materials to construction sites?</button>
+                <div class="faq-answer">
+                    <p>Yes, we provide doorstep delivery to construction sites with on-time dispatch, ensuring your projects never face material delays.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question">Why should I choose R.S.Constructions?</button>
+                <div class="faq-answer">
+                    <p>With years of experience, partnerships with top developers, and a reputation for timely delivery and trusted quality, we are one of the most reliable suppliers in Mumbai.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question">Do you cater to small projects like home construction?</button>
+                <div class="faq-answer">
+                    <p>Absolutely! We supply materials not just for large builders but also for individual homeowners, contractors, and small-scale projects.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question">How can I place an order?</button>
+                <div class="faq-answer">
+                    <p>You can contact us directly via phone, email, or the contact form on our website. Our team will assist you with material selection and timely delivery.</p>
+                </div>
+            </div>
+
+        </div>
+    </section>
 
     <!-- Footer -->
     <footer class="footer">
@@ -279,6 +370,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     </script>
 </body>
 </html>
+
 
 
 

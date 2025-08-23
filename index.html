@@ -68,6 +68,35 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 	<!-- build:css assets/css/footer.css-->
 	<link rel="stylesheet" href="assets/css/contact-us.css">
 	<link rel="stylesheet" href="assets/css/footer.css">
+	<style>
+		.contact-section {
+  padding: 20px;
+}
+
+.contact-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.contact-info,
+.contact-map {
+  flex: 1 1 50%; /* Each takes 50% width */
+}
+
+.contact-info {
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+.contact-map iframe {
+  width: 100%;
+  height: 100%;
+  min-height: 300px;
+  border: 0;
+  border-radius: 8px;
+}
+	</style>
 	<!-- endbuild-->
 	<script type="application/ld+json">
 {
@@ -560,15 +589,24 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 		</section>
 	</div>
 	<div class="contact-section" id="contactUs">
-		<h2>Contact Us</h2>
-		<p>We would love to hear from you! Reach out to us using the details below:</p>
-		<div class="contact-info">
-			<p><strong>Phone:</strong> <a href="tel:+919820953268" class="sub-txt">IN +91 9820953268</a></p>
-			<p><strong>Email:</strong> <a href="mailto:rsenterprises95m@gmail.com">rsenterprises95m@gmail.com</a></p>
-			<p><strong>Address:</strong> Almel Housing, Amar Palace, Kashimira, Miraroad east 401107</p>
-			<p><strong>Working Hours:</strong> Mon - Sun, All Time</p>
-		</div>
-	</div>
+  <h2>Contact Us</h2>
+  <p>We would love to hear from you! Reach out to us using the details below:</p>
+
+  <div class="contact-wrapper">
+    <!-- Left side: Contact Info -->
+    <div class="contact-info">
+      <p><strong>Phone:</strong> <a href="tel:+919820953268" class="sub-txt">IN +91 9820953268</a></p>
+      <p><strong>Email:</strong> <a href="mailto:rsenterprises95m@gmail.com">rsenterprises95m@gmail.com</a></p>
+      <p><strong>Address:</strong> Almel Housing, Amar Palace, Kashimira, Miraroad east 401107</p>
+      <p><strong>Working Hours:</strong> Mon - Sun, All Time</p>
+    </div>
+
+    <!-- Right side: Map -->
+    <div class="contact-map">
+		<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3767.724273777357!2d72.83224717500639!3d19.20724164783965!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7b71ea252485f%3A0xdc54e497f5293df3!2sRS%20Enterprises%20-%20Building%20material%20supplier%20online%20store!5e0!3m2!1sen!2sin!4v1755939358854!5m2!1sen!2sin" width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">Building material supplier near me, Building material supplier in mumbai, building and materials</iframe>
+    </div>
+  </div>
+</div>
 	<!-- End main content-->
 	<footer class="footer">
 		<picture>
@@ -716,6 +754,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 </body>
 
 </html>
+
 
 
 

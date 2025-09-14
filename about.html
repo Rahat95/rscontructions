@@ -186,6 +186,127 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         .faq-item.active .faq-answer {
             display: block;
         }
+        /* 🌟 Extra Styling for New About Page Sections */
+.our-team, 
+.sustainability, 
+.achievements, 
+.service-areas {
+    max-width: 1200px;
+    margin: 60px auto;
+    padding: 40px 20px;
+    background: #fff;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+}
+
+.our-team h2, 
+.sustainability h2, 
+.achievements h2, 
+.service-areas h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: #ff9800;
+    text-align: center;
+}
+
+.our-team p, 
+.sustainability p, 
+.achievements p, 
+.service-areas p {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #555;
+}
+
+.our-team ul, 
+.sustainability ul, 
+.achievements ul, 
+.service-areas ul {
+    list-style: none;
+    padding: 0;
+    margin: 20px auto;
+    max-width: 900px;
+}
+
+.our-team ul li, 
+.sustainability ul li, 
+.achievements ul li, 
+.service-areas ul li {
+    background: #fafafa;
+    padding: 12px 18px;
+    margin: 12px 0;
+    border-left: 4px solid #ff9800;
+    border-radius: 8px;
+    font-size: 1rem;
+    color: #333;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+    transition: background 0.3s ease;
+}
+
+.our-team ul li:hover, 
+.sustainability ul li:hover, 
+.achievements ul li:hover, 
+.service-areas ul li:hover {
+    background: #fff3e0;
+}
+
+/* CTA Block */
+.cta-block {
+    text-align: center;
+    background: linear-gradient(135deg, #ff9800, #ff5722);
+    color: #fff;
+    padding: 60px 20px;
+    border-radius: 15px;
+    margin: 70px auto;
+    max-width: 1100px;
+    box-shadow: 0 6px 25px rgba(0,0,0,0.1);
+}
+
+.cta-block h2 {
+    font-size: 2.2rem;
+    margin-bottom: 15px;
+    color: #fff;
+}
+
+.cta-block p {
+    font-size: 1.1rem;
+    margin-bottom: 25px;
+}
+
+.cta-btn {
+    display: inline-block;
+    padding: 14px 30px;
+    background: #fff;
+    color: #ff5722;
+    font-weight: bold;
+    font-size: 1rem;
+    border-radius: 30px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    box-shadow: 0 3px 12px rgba(0,0,0,0.15);
+}
+
+.cta-btn:hover {
+    background: #222;
+    color: #fff;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .our-team, .sustainability, .achievements, .service-areas {
+        padding: 30px 15px;
+    }
+    .cta-block h2 {
+        font-size: 1.8rem;
+    }
+    .cta-btn {
+        width: 100%;
+        padding: 12px;
+    }
+}
+
     </style>
 </head>
 <body>
@@ -317,6 +438,47 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
         </div>
     </section>
+    <section class="our-team" data-aos="fade-up">
+  <h2>Meet Our Team</h2>
+  <p>Behind R.S.Constructions is a dedicated team of professionals with decades of combined experience in construction materials and logistics.</p>
+  <ul>
+    <li><strong>Procurement Specialists:</strong> Ensuring only premium materials reach our warehouses.</li>
+    <li><strong>Logistics Managers:</strong> Coordinating fast, safe, and reliable deliveries.</li>
+    <li><strong>Customer Support Team:</strong> Always ready to guide you in choosing the right materials for your project.</li>
+  </ul>
+</section>
+
+    <section class="sustainability" data-aos="fade-in">
+  <h2>Our Commitment to Sustainability</h2>
+  <p>At R.S.Constructions, we believe in building a stronger future without compromising the environment. Our practices include:</p>
+  <ul>
+    <li>Promoting eco-friendly alternatives such as <strong>crushed sand</strong> to reduce river sand dependency.</li>
+    <li>Partnering with suppliers who follow sustainable mining and production methods.</li>
+    <li>Encouraging <strong>green construction practices</strong> across residential and commercial projects.</li>
+  </ul>
+</section>
+<section class="achievements" data-aos="zoom-in">
+  <h2>Achievements & Certifications</h2>
+  <ul>
+    <li>✔ Trusted supplier for 100+ residential and commercial projects</li>
+    <li>✔ Long-term partnerships with leading developers in Mumbai & Thane</li>
+    <li>✔ Recognized for <strong>on-time delivery</strong> and <strong>quality assurance</strong></li>
+  </ul>
+</section>
+
+    <section class="service-areas" data-aos="zoom-in">
+  <h2>Areas We Serve</h2>
+  <p>We proudly deliver construction materials across key regions of Maharashtra:</p>
+  <ul>
+    <li>Mumbai Metropolitan Region (MMR)</li>
+    <li>Mumbai</li>
+    <li>Mira Road & Bhayandar</li>
+    <li>Thane & Ghodbunder Road</li>
+    <li>Vasai-Virar</li>
+  </ul>
+  <p>If your site is outside these areas, <a href="contactus.html">contact us</a> — we’ll arrange custom logistics.</p>
+</section>
+
 
     <!-- Footer -->
     <footer class="footer">

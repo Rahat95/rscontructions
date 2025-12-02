@@ -74,6 +74,81 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 	<link rel="stylesheet" href="assets/css/contact-us.css">
 	<link rel="stylesheet" href="assets/css/footer.css">
 	<style>
+		.location-supply {
+  background: #ffffff;
+  padding: 50px 20px;
+  text-align: center;
+}
+
+.location-supply h2 {
+  font-size: 30px;
+  font-weight: 700;
+  color: #222;
+  margin-bottom: 10px;
+}
+
+.sub-text {
+  color: #555;
+  max-width: 600px;
+  margin: 0 auto 35px auto;
+  font-size: 16px;
+}
+
+.location-cards {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.loc-card {
+  background: #f7f7f7;
+  border-radius: 12px;
+  padding: 25px;
+  width: 300px;
+  text-align: left;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.loc-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 6px 16px rgba(0,0,0,0.12);
+}
+
+.loc-card h3 {
+  font-size: 20px;
+  color: #000;
+  margin-bottom: 10px;
+}
+
+.loc-card p {
+  color: #444;
+  margin-bottom: 15px;
+  font-size: 14.5px;
+}
+
+.loc-btn {
+  display: inline-block;
+  background: #ffcc00;
+  padding: 10px 18px;
+  border-radius: 8px;
+  font-weight: 600;
+  color: #000;
+  text-decoration: none;
+  transition: background 0.3s ease;
+}
+
+.loc-btn:hover {
+  background: #e6b800;
+}
+
+@media (max-width: 768px) {
+  .loc-card {
+    width: 100%;
+  }
+}
+
 		.calc-section {
   display: flex;
   align-items: center;
@@ -558,6 +633,34 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <img src="assets/images/materials-calculator.png" alt="Building Material Calculator">
   </div>
 </section>
+
+<section class="location-supply">
+  <h2>Your Trusted Construction Material Supplier Across Mumbai</h2>
+  <p class="sub-text">Premium Cement, Sand & Aggregates Delivered Fast — Wherever You Build.</p>
+
+  <div class="location-cards">
+
+    <div class="loc-card">
+      <h3>Building Material Supplier in Mumbai</h3>
+      <p>We supply top-quality construction materials to residential & commercial sites across Mumbai with fast delivery and best market rates.</p>
+      <a href="/mumbai.html" class="loc-btn">Know More</a>
+    </div>
+
+    <div class="loc-card">
+      <h3>Construction Material Supply in Navi Mumbai</h3>
+      <p>From Panvel to Nerul, we provide bulk and retail material supply with reliable logistics and certified product quality.</p>
+      <a href="/navi-mumbai.html" class="loc-btn">Know More</a>
+    </div>
+
+    <div class="loc-card">
+      <h3>Sand & Aggregate Supplier in Thane</h3>
+      <p>High-grade sand and aggregates for home building, roadwork & infrastructure projects delivered safely to your site.</p>
+      <a href="/thane.html" class="loc-btn">Know More</a>
+    </div>
+
+  </div>
+</section>
+
 
 		<section class="rsconstruction-circle-sec" id="servicesSection">
 			<div class="sec-img">

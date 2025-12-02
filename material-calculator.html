@@ -1,0 +1,280 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>RS Construction — Smart Material Calculator</title>
+  <meta name="description" content="RS Construction material calculator — supports ft/in units, project types, and instant material estimates.">
+
+  <style>
+    .hero-section {
+  position: relative;
+  width: 100%;
+  height: 300px;
+  overflow: hidden;
+  border-radius: 10px;
+  margin-bottom: 20px;
+}
+
+.hero-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.hero-overlay {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  padding: 20px;
+  background: rgba(0, 0, 0, 0.4);
+  color: #fff;
+  font-size: 24px;
+  text-align: center;
+  font-weight: bold;
+}
+
+    :root{
+      --bg:#f7f9fb;--card:#ffffff;--accent:#0b6efd;--accent-2:#0b84d6;--muted:#6b7280;--radius:12px;--pad:18px;--maxw:1100px;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%;margin:0;font-family:Inter,Segoe UI,Roboto,Helvetica,Arial,sans-serif;background:var(--bg);color:#0b1b3b}
+    .container{max-width:var(--maxw);margin:28px auto;padding:20px}
+    .header{text-align:center;margin-bottom:12px}
+    .header h1{margin:0;font-size:clamp(20px,3vw,28px)}
+    .tag{color:var(--muted);margin-top:6px}
+
+    .calculator{display:grid;grid-template-columns:1fr 340px;gap:20px}
+    .card{background:var(--card);border-radius:var(--radius);padding:var(--pad);box-shadow:0 8px 24px rgba(12,20,30,0.06)}
+    fieldset{border:0;margin:0 0 14px;padding:0}
+    legend{font-weight:700;margin-bottom:10px}
+
+    .form-row{display:flex;gap:12px;flex-wrap:wrap;align-items:center}
+    label{display:block;font-size:14px;color:var(--muted)}
+    .input, input, select{padding:10px;border-radius:8px;border:1px solid #e6e9ef;background:#fff;font-size:14px}
+    .input[readonly]{background:#f6f9ff;border-style:dashed}
+
+    .col{flex:1;min-width:120px}
+    .unit-inline{display:flex;gap:8px;align-items:center}
+
+    .slogan{background:linear-gradient(90deg,var(--accent),var(--accent-2));color:#fff;padding:10px;border-radius:10px;font-weight:600;text-align:center;margin-bottom:10px}
+
+    .actions{display:flex;gap:12px;justify-content:flex-end;margin-top:6px}
+    .btn{background:var(--accent);color:#fff;padding:10px 14px;border-radius:10px;border:0;cursor:pointer}
+    .btn.ghost{background:transparent;color:var(--accent);border:1px solid rgba(11,110,253,0.12)}
+    .btn:disabled{opacity:0.6;cursor:not-allowed}
+
+    .result-area p{margin:6px 0;color:#0b1b3b}
+    .muted{color:var(--muted);font-size:13px}
+
+    .help ol{padding-left:18px;color:var(--muted);margin:0}
+    .footer{text-align:center;margin-top:18px;color:var(--muted);font-size:13px}
+
+    @media (max-width:900px){.calculator{grid-template-columns:1fr}.actions{justify-content:center}}
+  </style>
+</head>
+<body>
+    <header class="hero-section">
+  <img src="assets/images/materials-calculator.png" alt="Construction Material Calculator" class="hero-image">
+  <div class="hero-overlay">
+    <h1>No More Guessing — Calculate Materials Accurately</h1>
+  </div>
+</header>
+
+  <main class="container">
+    <header class="header">
+      <h1>RS Construction — Smart Material Calculator</h1>
+      <p class="tag">Fast, reliable material estimates for contractors & homeowners in Mumbai.</p>
+    </header>
+
+    <section class="calculator">
+      <form id="calcForm" class="card" onsubmit="return false">
+        <div class="slogan">Calculate smarter, build stronger — with RS Construction</div>
+
+        <fieldset>
+          <legend>Project & Units</legend>
+          <div class="form-row">
+            <div class="col">
+              <label for="projectType">What are you building?</label>
+              <select id="projectType" class="input">
+                <option value="bungalow">Bungalow</option>
+                <option value="building">Building (Multi-storey)</option>
+                <option value="compoundWall">Compound Wall</option>
+                <option value="slab">RCC Slab</option>
+                <option value="footing">Footing / Foundation</option>
+              </select>
+            </div>
+
+            <div class="col">
+              <label for="unitSelect">Units</label>
+              <select id="unitSelect" class="input" onchange="updatePlaceholders()">
+                <option value="in">Inch (in)</option>
+                <option value="ft">Feet (ft)</option>
+              </select>
+            </div>
+          </div>
+        </fieldset>
+
+        <fieldset>
+          <legend>Dimensions</legend>
+          <div class="form-row">
+            <div class="col">
+              <label for="length">Length</label>
+              <input id="length" class="input" type="number" step="0.01" min="0" placeholder="Enter length in ft" oninput="validateInputs()">
+            </div>
+
+            <div class="col">
+              <label for="width">Width</label>
+              <input id="width" class="input" type="number" step="0.01" min="0" placeholder="Enter width in ft" oninput="validateInputs()">
+            </div>
+
+            <div class="col">
+              <label for="height">Height / Thickness</label>
+              <input id="height" class="input" type="number" step="0.01" min="0" placeholder="Enter height in ft" oninput="validateInputs()">
+            </div>
+          </div>
+          <p class="muted">Tip: choose units as <strong>ft</strong> for building dimensions or <strong>in</strong> for small thicknesses.</p>
+        </fieldset>
+
+        <fieldset>
+          <legend>Mix & Options</legend>
+          <div class="form-row">
+            <div class="col">
+              <label for="mixRatio">Concrete Mix Ratio</label>
+              <select id="mixRatio" class="input">
+                <option value="1:2:4">1:2:4 (Standard)</option>
+                <option value="1:1.5:3">1:1.5:3 (Strong)</option>
+                <option value="1:3:6">1:3:6 (Lean)</option>
+              </select>
+            </div>
+
+            <div class="col">
+              <label for="wastePct">Waste Allowance (%)</label>
+              <input id="wastePct" class="input" type="number" min="0" step="0.1" value="5">
+            </div>
+
+            <div class="col">
+              <label for="bagVolume">Cement Bag Volume (m³)</label>
+              <input id="bagVolume" class="input" type="number" step="0.001" value="0.035">
+            </div>
+          </div>
+        </fieldset>
+
+        <fieldset class="results">
+          <legend>Estimate</legend>
+          <div class="form-row result-area" id="resultArea">
+            <div style="flex:1;min-width:160px"><p>Total Concrete Volume: <strong id="outVolume">—</strong> (m³)</p></div>
+            <div style="flex:1;min-width:160px"><p>Cement Required: <strong id="outCement">—</strong></p></div>
+            <div style="flex:1;min-width:160px"><p>Sand Required: <strong id="outSand">—</strong> (CFT)</p></div>
+            <div style="flex:1;min-width:160px"><p>Aggregate Required: <strong id="outAgg">—</strong> (CFT)</p></div>
+          </div>
+          <p class="muted">Results are estimates. For precise quantities and delivery, contact RS Construction.</p>
+        </fieldset>
+
+        <div class="actions">
+          <button id="calcBtn" class="btn" type="button" onclick="calculateMaterials()" disabled>Calculate Now</button>
+          <button type="reset" class="btn ghost" onclick="resetResults()">Reset</button>
+        </div>
+      </form>
+
+      <aside class="help card">
+        <h3>How to use</h3>
+        <ol>
+          <li>Select project type and preferred units (ft or in).</li>
+          <li>Enter dimensions and choose mix ratio.</li>
+          <li>Click <strong>Calculate Now</strong> to get instant estimates.</li>
+        </ol>
+        <p class="muted">Need help or custom mix? Call RS Construction: <strong>+91 9820953268</strong></p>
+      </aside>
+    </section>
+
+    <footer class="footer"><p>© RS Construction — Trusted building material suppliers in Mumbai.</p></footer>
+  </main>
+
+  <script>
+    // Unit conversion helpers
+    const UNIT = { ft: 0.3048, in: 0.0254 };
+
+    function updatePlaceholders(){
+      const unit = document.getElementById('unitSelect').value;
+      const text = unit === 'ft' ? 'Enter value in ft' : 'Enter value in inches';
+      document.getElementById('length').placeholder = text;
+      document.getElementById('width').placeholder = text;
+      document.getElementById('height').placeholder = unit === 'ft' ? 'Enter height in ft' : 'Enter thickness in inches';
+    }
+
+    function validateInputs(){
+      const l = parseFloat(document.getElementById('length').value) || 0;
+      const w = parseFloat(document.getElementById('width').value) || 0;
+      const h = parseFloat(document.getElementById('height').value) || 0;
+      document.getElementById('calcBtn').disabled = !(l>0 && w>0 && h>0);
+    }
+
+    function resetResults(){
+      document.getElementById('outVolume').textContent = '—';
+      document.getElementById('outCement').textContent = '—';
+      document.getElementById('outSand').textContent = '—';
+      document.getElementById('outAgg').textContent = '—';
+      document.getElementById('calcBtn').disabled = true;
+    }
+
+    function parseRatio(r){
+      const parts = r.split(':').map(Number);
+      const total = parts.reduce((a,b)=>a+b,0);
+      return parts.map(p=>p/total); // returns [cement%, sand%, agg%]
+    }
+
+    function calculateMaterials(){
+      const unit = document.getElementById('unitSelect').value;
+      const factor = UNIT[unit];
+
+      // read inputs
+      const lengthInput = parseFloat(document.getElementById('length').value) || 0;
+      const widthInput = parseFloat(document.getElementById('width').value) || 0;
+      const heightInput = parseFloat(document.getElementById('height').value) || 0;
+
+      // convert to meters
+      const lengthM = lengthInput * factor;
+      const widthM = widthInput * factor;
+      const heightM = heightInput * factor;
+
+      const rawVolume = lengthM * widthM * heightM; // m3
+
+      // apply waste allowance (convert % to multiplier)
+      const wastePct = parseFloat(document.getElementById('wastePct').value) || 0;
+      const wasteMultiplier = 1 + (wastePct/100);
+
+      // wet to dry volume increase (typically 1.33)
+      const dryFactor = 1.33;
+
+      const dryVolume = rawVolume * dryFactor * wasteMultiplier;
+
+      // mix ratio breakdown
+      const ratio = parseRatio(document.getElementById('mixRatio').value);
+      const cementVolume = dryVolume * ratio[0];
+      const sandVolume = dryVolume * ratio[1];
+      const aggVolume = dryVolume * ratio[2];
+
+      // cement bags (user-defined bag volume in m3)
+      const bagVolume = parseFloat(document.getElementById('bagVolume').value) || 0.035;
+      const cementBags = cementVolume / bagVolume;
+
+      // round results smartly
+      const outVolume = rawVolume.toFixed(3);
+      const outCement = Math.ceil(cementBags) + ' bags';
+      const outSand = (sandVolume * 35.3147).toFixed(1) + ' CFT';
+      const outAgg = (aggVolume * 35.3147).toFixed(1) + ' CFT';
+
+      // show results
+      document.getElementById('outVolume').textContent = outVolume;
+      document.getElementById('outCement').textContent = outCement;
+      document.getElementById('outSand').textContent = outSand;
+      document.getElementById('outAgg').textContent = outAgg;
+    }
+
+    // init
+    updatePlaceholders();
+    resetResults();
+  </script>
+</body>
+</html>

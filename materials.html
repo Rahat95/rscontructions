@@ -248,7 +248,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <p>Portable and durable container offices for on-site management and project operations.<b>Customized sizes available</b></p>
     <meta name="keywords" content="portable container office, site office container, prefabricated container office, construction site office cabin, portable office cabin price, portable site office supplier, modular office container">
 </div> -->
-	<a href="ready-mix-concrete.html"><div class="material-card" 
+	<!-- <a href="ready-mix-concrete.html"><div class="material-card" 
      data-id="P000" 
      data-title="Ready Mix Concrete (RMC)" 
      data-desc="Precision-batched Ready Mix Concrete (RMC) engineered for high structural strength, rapid placing, and superior durability. Ideal for slabs, beams, columns, and heavy civil foundations. Available in M20 to M50 grades with timely transit mixer delivery directly to your site."
@@ -258,7 +258,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <p>High-grade, precision-batched ready mix concrete delivered via transit mixers for slabs, beams, and structural foundations.</p>
     <p><strong>GST:</strong> 18%</p>
     <meta name="keywords" content="ready mix concrete supplier, RMC concrete price per cubic meter, RMC transit mixer delivery, buy RMC concrete near me, M20 M25 M30 RMC concrete, commercial ready mix concrete supplier, RMC plant near me, readymix concrete for slab casting">
-</div></a>
+</div></a> -->
 
 <a href="cement.html"><div class="material-card" 
      data-id="P001" 
@@ -550,94 +550,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 	<script src="assets/js/popup.js"></script>
 	<script src="assets/js/about-us.js" defer></script>
 	<script src="assets/js/product-script.js"></script>
-
-	<!-- ===== Materials modal script (from your materials page) ===== -->
-	<!-- <script>
-		(function () {
-		  const modal = document.getElementById('modal');
-		  const modalTitle = document.getElementById('modalTitle');
-		  const modalID = document.getElementById('modalID');
-		  const modalDesc = document.getElementById('modalDesc');
-		  const modalClose = document.getElementById('modalClose');
-
-		  function openModal(id, title, desc, pushState = true) {
-			modalTitle.textContent = title;
-			modalID.textContent = id;
-			modalDesc.textContent = desc;
-			modal.style.display = 'flex';
-			document.body.style.overflow = 'hidden';
-			if (pushState) {
-			  const urlTitle = encodeURIComponent(title);
-			  const url = `?id=${encodeURIComponent(id)}&name=${urlTitle}`;
-			  history.pushState({id, title}, '', url);
-			}
-		  }
-
-		  function closeModal(fromPop) {
-			modal.style.display = 'none';
-			document.body.style.overflow = 'auto';
-			// if this wasn't triggered by popstate, reset URL to base path
-			if (!fromPop) {
-			  history.pushState({}, '', window.location.pathname);
-			}
-		  }
-
-		  // attach click handlers to each card
-		  document.querySelectorAll('.material-card').forEach(card => {
-			card.addEventListener('click', () => {
-			  openModal(card.dataset.id, card.dataset.title, card.dataset.desc);
-			});
-			// allow keyboard accessibility
-			card.setAttribute('tabindex', '0');
-			card.addEventListener('keydown', (e) => {
-			  if (e.key === 'Enter' || e.key === ' ') {
-				e.preventDefault();
-				openModal(card.dataset.id, card.dataset.title, card.dataset.desc);
-			  }
-			});
-		  });
-
-		  modalClose.addEventListener('click', () => closeModal(false));
-
-		  // Close modal when clicking outside modal-content
-		  window.addEventListener('click', e => {
-			if (e.target === modal) closeModal(false);
-		  });
-
-		  // ESC to close
-		  window.addEventListener('keydown', e => {
-			if (e.key === 'Escape' && modal.style.display === 'flex') {
-			  closeModal(false);
-			}
-		  });
-
-		  // open modal from URL params on load (without pushing state again)
-		  window.addEventListener('DOMContentLoaded', () => {
-			const params = new URLSearchParams(window.location.search);
-			const id = params.get('id');
-			const name = params.get('name');
-			if (id && name) {
-			  const card = [...document.querySelectorAll('.material-card')].find(c => c.dataset.id === id);
-			  if (card) {
-				openModal(card.dataset.id, card.dataset.title, card.dataset.desc, false);
-			  }
-			}
-		  });
-
-		  // handle back/forward
-		  window.addEventListener('popstate', (event) => {
-			if (event.state && event.state.id && event.state.title) {
-			  const card = [...document.querySelectorAll('.material-card')].find(c => c.dataset.id === event.state.id);
-			  if (card) {
-				openModal(card.dataset.id, card.dataset.title, card.dataset.desc, false);
-			  }
-			} else {
-			  // no state => close modal
-			  closeModal(true);
-			}
-		  });
-		})();
-	</script> -->
 </body>
 </html>
 

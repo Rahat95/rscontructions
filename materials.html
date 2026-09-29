@@ -27,132 +27,132 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
 	<!-- Page specific styles (your materials styles) -->
 	<style>
-		/* ensure header stays on top */
-		.header-bottom { position: sticky; top: 0; z-index: 999; }
+  /* Ensure header stays on top */
+  .header-bottom { 
+    position: sticky; 
+    top: 0; 
+    z-index: 999; 
+  }
 
-		body {
-		  font-family: Arial, sans-serif;
-		  margin: 0;
-		  background-color: #f9f9f9;
-		}
-		.materials-header {
-		  background: #1a1a1a;
-		  color: white;
-		  padding: 100px 20px;
-		  text-align: center;
-		}
-		.materials-header h1 {
-		  margin-top: 100px;
-		  font-size: 2.2rem;
-		}
-		.materials-grid {
-		  display: grid;
-		  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-		  gap: 20px;
-		  padding: 40px;
-		}
-		.material-card {
-		  background: white;
-		  border-radius: 8px;
-		  overflow: hidden;
-		  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-		  cursor: pointer;
-		  transition: 0.3s;
-		  outline: none;
-		}
-		.material-card:focus,
-		.material-card:hover {
-		  transform: translateY(-5px);
-		  box-shadow: 0 8px 15px rgba(0,0,0,0.15);
-		}
-		.material-card img {
-		  width: 100%;
-		  height: 180px;
-		  object-fit: cover;
-		  display: block;
-		}
-		.material-card h3 {
-		  margin: 15px;
-		  font-size: 1.2rem;
-		  color: #333;
-		}
-		.material-card p {
-		  margin: 0 15px 15px;
-		  color: #555;
-		}
+  body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    background-color: #f9f9f9;
+  }
 
-		/* Modal Styles */
-		.modal {
-		  display: none;
-		  position: fixed;
-		  inset: 0;
-		  background: rgba(0,0,0,0.6);
-		  justify-content: center;
-		  align-items: center;
-		  z-index: 10000;
-		  padding: 20px;
-		}
-		.modal-content {
-		  background: white;
-		  max-width: 700px;
-		  width: 100%;
-		  border-radius: 10px;
-		  padding: 30px 25px;
-		  box-shadow: 0 10px 40px rgba(0,0,0,0.2);
-		  position: relative;
-		  font-family: Arial, sans-serif;
-		  text-align: left;
-		}
-		.modal-close {
-		  position: absolute;
-		  top: 12px;
-		  right: 16px;
-		  font-size: 28px;
-		  color: #555;
-		  cursor: pointer;
-		  transition: color 0.3s;
-		  font-weight: bold;
-		  line-height: 1;
-		}
-		.modal-close:hover { color: #ff5722; }
-		.modal-content h3 { margin-top: 0; color: #ff5722; font-size: 1.6rem; }
-		.modal-content p { line-height: 1.6; margin: 12px 0; color: #444; font-size: 1rem; }
-		.modal-content p strong { color: #ff9800; }
+  .materials-header {
+    background: #1a1a1a;
+    color: white;
+    padding: 100px 20px;
+    text-align: center;
+  }
 
-		/* CTA Banner */
-		.cta-banner {
-		  background: linear-gradient(135deg, #ff9800, #ff5722);
-		  color: white;
-		  text-align: center;
-		  padding: 25px 15px;
-		  border-radius: 10px;
-		  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-		  font-family: Arial, sans-serif;
-		  margin: 20px 40px;
-		}
-		.cta-banner h3 { margin-bottom: 10px; font-size: 24px; }
-		.cta-banner p { font-size: 16px; margin-bottom: 15px; }
-		.cta-btn {
-		  display: inline-block;
-		  background: white;
-		  color: #ff5722;
-		  padding: 10px 4px;
-		  margin: 5px;
-		  border-radius: 6px;
-		  font-weight: bold;
-		  text-decoration: none;
-		  transition: all 0.3s ease;
-		}
-		.cta-btn:hover { background: rgba(255,255,255,0.9); transform: scale(1.03); }
-		.cta-btn.secondary { background: #fff3e0; color: #ff9800; }
+  .materials-header h1 {
+    margin-top: 100px;
+    font-size: 2.2rem;
+  }
 
-		/* responsive tweaks */
-		@media (max-width: 720px) {
-		  .materials-header { padding: 22px 12px; }
-		  .materials-grid { padding: 20px; }
-		  .modal-content { padding: 20px; }
-		}
-	</style>
+  /* Grid Layout */
+  .materials-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+    padding: 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  /* Card Styles */
+  .material-card {
+    background: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    outline: none;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+  }
+
+  .material-card:focus,
+  .material-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15);
+  }
+
+  .material-card img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    display: block;
+    flex-shrink: 0;
+  }
+
+  .material-card h3 {
+    margin: 15px 15px 10px;
+    font-size: 1.2rem;
+    color: #333;
+  }
+
+  .material-card p {
+    margin: 0 15px 15px;
+    color: #555;
+    flex-grow: 1; /* Pushes card content evenly if descriptions vary in length */
+  }
+
+  /* CTA Banner */
+  .cta-banner {
+    background: linear-gradient(135deg, #ff9800, #ff5722);
+    color: white;
+    text-align: center;
+    padding: 25px 15px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    font-family: Arial, sans-serif;
+    margin: 20px 40px;
+  }
+
+  .cta-banner h3 { 
+    margin-bottom: 10px; 
+    font-size: 24px; 
+  }
+
+  .cta-banner p { 
+    font-size: 16px; 
+    margin-bottom: 15px; 
+  }
+
+  .cta-btn {
+    display: inline-block;
+    background: white;
+    color: #ff5722;
+    padding: 10px 16px;
+    margin: 5px;
+    border-radius: 6px;
+    font-weight: bold;
+    text-decoration: none;
+    transition: all 0.3s ease;
+  }
+
+  .cta-btn:hover { 
+    background: rgba(255, 255, 255, 0.9); 
+    transform: scale(1.03); 
+  }
+
+  .cta-btn.secondary { 
+    background: #fff3e0; 
+    color: #ff9800; 
+  }
+
+  /* Responsive Tweaks */
+  @media (max-width: 720px) {
+    .materials-header { padding: 22px 12px; }
+    .materials-grid { padding: 20px; }
+    .cta-banner { margin: 20px; }
+  }
+</style>
 </head>
 <body>
 <!-- kandivali google tag -->
@@ -248,7 +248,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <p>Portable and durable container offices for on-site management and project operations.<b>Customized sizes available</b></p>
     <meta name="keywords" content="portable container office, site office container, prefabricated container office, construction site office cabin, portable office cabin price, portable site office supplier, modular office container">
 </div> -->
-	<!-- <a href="ready-mix-concrete.html"><div class="material-card" 
+	<a href="ready-mix-concrete.html"><div class="material-card" 
      data-id="P000" 
      data-title="Ready Mix Concrete (RMC)" 
      data-desc="Precision-batched Ready Mix Concrete (RMC) engineered for high structural strength, rapid placing, and superior durability. Ideal for slabs, beams, columns, and heavy civil foundations. Available in M20 to M50 grades with timely transit mixer delivery directly to your site."
@@ -258,7 +258,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <p>High-grade, precision-batched ready mix concrete delivered via transit mixers for slabs, beams, and structural foundations.</p>
     <p><strong>GST:</strong> 18%</p>
     <meta name="keywords" content="ready mix concrete supplier, RMC concrete price per cubic meter, RMC transit mixer delivery, buy RMC concrete near me, M20 M25 M30 RMC concrete, commercial ready mix concrete supplier, RMC plant near me, readymix concrete for slab casting">
-</div></a> -->
+</div></a>
 
 <a href="cement.html"><div class="material-card" 
      data-id="P001" 

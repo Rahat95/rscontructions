@@ -64,11 +64,6 @@
     <priority>0.90</priority>
         </url>
         <url>
-    <loc>https://rsconstructions.vercel.app/bricks-6inch.html</loc>
-    <lastmod>2025-09-29T10:39:26+00:00</lastmod>
-    <priority>0.90</priority>
-  </url>
-        <url>
     <loc>https://rsconstructions.vercel.app/brick-6inch.html</loc>
     <lastmod>2025-09-29T10:39:26+00:00</lastmod>
     <priority>0.90</priority>
@@ -129,12 +124,12 @@
     <priority>0.90</priority>
   </url>
         <url>
-    <loc>https://rsconstructions.vercel.app/railyway-ballast.html</loc>
+    <loc>https://rsconstructions.vercel.app/railway-ballast.html</loc>
     <lastmod>2025-09-29T10:39:26+00:00</lastmod>
     <priority>0.90</priority>
   </url>
          <url>
-    <loc>https://rsconstructions.vercel.app/railyway-blanket.html</loc>
+    <loc>https://rsconstructions.vercel.app/railway-blanket.html</loc>
     <lastmod>2025-09-29T10:39:26+00:00</lastmod>
     <priority>0.90</priority>
   </url>
